@@ -4,15 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fastbuy</title>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/media.css" />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="../styles/style.css" />
 
     <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
@@ -24,7 +16,39 @@
 
   <script type="text/babel">
     function Header() {
-      return <header></header>;
+      return (
+        <header id="header">
+          <div id="header-content">
+            <div id="logo-content">
+              <a href="index.html">
+                <img
+                  id="header-logo"
+                  src="../assets/logo/logo-fast.png"
+                  alt="Logo"
+                />
+              </a>
+              <button id="buscar-cep">Digite o seu CEP</button>
+            </div>
+            <input type="text" id="busca" placeholder="Busque na Fastbuy" />
+            <div className="header-actions">
+              <a className="header-actions-item" href="#">
+                <img src="../assets/icons/heart.png" alt="Favoritos" />
+              </a>
+              <a className="header-actions-item" href="#">
+                <img src="../assets/icons/shopping-bag.png" alt="Carrinho" />
+              </a>
+            </div>
+          </div>
+          <nav className="header-nav">
+            <ul className="header-ul">
+              <li className="header-ul-item">Eletrônicos</li>
+              <li className="header-ul-item"></li>
+              <li className="header-ul-item"></li>
+              <li className="header-ul-item"></li>
+            </ul>
+          </nav>
+        </header>
+      );
     }
 
     function App() {
