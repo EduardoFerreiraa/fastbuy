@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+#header {
+  width: 100%;
+}
+
+#header-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+#logo-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+#buscar-cep {
+  border: 1px solid black;
+  padding: 15px 40px;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#buscar-cep:hover {
+  cursor: pointer;
+}
+
+#busca {
+  outline: none;
+  color: gray;
+  padding: 14px 180px;
+  border-radius: 10px;
+  border: 1px solid black;
+  transition: 0.45s;
+  font-size: 1.05rem;
+}
+
+#busca:focus {
+  transform: scale(1.02);
+}
+
+.header-actions {
+  display: flex;
+  gap: 15px;
+}
+
+#header-logo {
+  position: relative;
+  width: 130px;
+}
+
+.header-actions-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-actions-item img {
+  width: 40px;
+}
+
+.header-actions-item a {
+  color: black;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-ul {
+  display: flex;
+  align-items: center;
+  gap: 37px;
+}
+
+.header-ul-item {
+  font-size: 15px;
+  color: black;
+  list-style: none;
+  margin-bottom: 10px;
+  border: 1.7px solid transparent;
+  padding: 10px;
+  transition: 0.2s;
+  border-radius: 15px;
+}
+
+.header-ul-item:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  border: 1.7px solid black;
+}

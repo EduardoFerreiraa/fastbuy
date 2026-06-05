@@ -1,11 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fastbuy</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="../styles/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+
+  <script type="text/babel">
+    function Header() {
+      return (
+        <header id="header">
+          <div id="header-content">
+            <div id="logo-content">
+              <a href="index.html">
+                <img
+                  id="header-logo"
+                  src="../assets/logo/logo-fast.png"
+                  alt="Logo"
+                />
+              </a>
+              <button id="buscar-cep">Digite o seu CEP</button>
+            </div>
+            <input type="text" id="busca" placeholder="Busque na Fastbuy" />
+            <div className="header-actions">
+              <a className="header-actions-item" href="#">
+                <img src="../assets/icons/heart.png" alt="Favoritos" />
+              </a>
+              <a className="header-actions-item" href="#">
+                <img src="../assets/icons/shopping-bag.png" alt="Carrinho" />
+              </a>
+            </div>
+          </div>
+          <nav className="header-nav">
+            <ul className="header-ul">
+              <li className="header-ul-item">Categorias</li>
+              <li className="header-ul-item">Smartphones</li>
+              <li className="header-ul-item">Informática</li>
+              <li className="header-ul-item">Games</li>
+              <li className="header-ul-item">TV e Áudio</li>
+              <li className="header-ul-item">Eletrodomésticos</li>
+              <li className="header-ul-item">Móveis</li>
+              <li className="header-ul-item">Eletrônicos</li>
+            </ul>
+          </nav>
+        </header>
+      );
+    }
+
+    function App() {
+      return (
+        <div>
+          <Header />
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
 </html>
