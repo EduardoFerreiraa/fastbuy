@@ -7,14 +7,13 @@
 
 #header {
   width: 100%;
-  background: linear-gradient(120deg, #ffa600 25%, #ff8c00 78%);
 }
 
 #header-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 70px;
+  gap: 40px;
 }
 
 #logo-content {
@@ -25,9 +24,9 @@
 }
 
 #buscar-cep {
-  padding: 18px 40px;
+  border: 1px solid black;
+  padding: 15px 40px;
   text-align: center;
-  border: 1px solid transparent;
   background-color: white;
   border-radius: 10px;
 }
@@ -39,15 +38,14 @@
 #busca {
   outline: none;
   color: gray;
-  padding: 16px 180px;
+  padding: 14px 180px;
   border-radius: 10px;
-  border: 1px solid white;
+  border: 1px solid black;
   transition: 0.45s;
   font-size: 1.05rem;
 }
 
 #busca:focus {
-  border: 1px solid rgb(255, 136, 0);
   transform: scale(1.02);
 }
 
@@ -72,7 +70,7 @@
 }
 
 .header-actions-item a {
-  color: white;
+  color: black;
 }
 
 .header-nav {
@@ -88,7 +86,8 @@
 }
 
 .header-ul-item {
-  color: white;
+  font-size: 15px;
+  color: black;
   list-style: none;
   margin-bottom: 10px;
   border: 1.7px solid transparent;
@@ -100,5 +99,5 @@
 .header-ul-item:hover {
   transform: scale(1.05);
   cursor: pointer;
-  border: 1.7px solid white;
+  border: 1.7px solid black;
 }
