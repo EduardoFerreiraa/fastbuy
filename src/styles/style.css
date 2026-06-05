@@ -13,14 +13,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 100px;
 }
 
 #logo-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 25px;
+  gap: 50px;
 }
 
 #buscar-cep {
@@ -100,4 +100,63 @@
   transform: scale(1.05);
   cursor: pointer;
   border: 1.7px solid black;
+}
+
+/* MAIN */
+
+#main {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.carousel {
+  width: 95%;
+  height: 100%;
+  margin: 30px auto;
+  position: relative;
+}
+
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.arrow-right {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.45s;
+}
+
+.arrow-right:hover {
+  color: white;
+  background-color: black;
+}
+
+.arrow-left {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.45s;
+}
+
+.arrow-left:hover {
+  color: white;
+  background-color: black;
 }
