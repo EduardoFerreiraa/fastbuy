@@ -7,46 +7,54 @@
 
 #header {
   width: 100%;
+  background: linear-gradient(to right, #4cb4e7, #8e68ff, #c28aff);
 }
 
 #header-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 100px;
+  gap: 170px;
 }
 
 #logo-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 20px;
 }
 
 #buscar-cep {
-  border: 1px solid black;
+  color: gray;
+  border: none;
   padding: 15px 40px;
   text-align: center;
   background-color: white;
   border-radius: 10px;
+  border: 1px solid transparent;
+  transition: 0.5s;
+  cursor: pointer;
 }
 
 #buscar-cep:hover {
-  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.74);
 }
 
 #busca {
   outline: none;
   color: gray;
-  padding: 14px 180px;
+  width: 50%;
+  padding: 15px;
   border-radius: 10px;
-  border: 1px solid black;
+  border: none;
   transition: 0.45s;
   font-size: 1.05rem;
+  transition: 0.5s ease;
+  border: 1px solid transparent;
 }
 
-#busca:focus {
-  transform: scale(1.02);
+#busca:hover {
+  border: 1px solid rgba(0, 0, 0, 0.74);
 }
 
 .header-actions {
@@ -56,7 +64,7 @@
 
 #header-logo {
   position: relative;
-  width: 130px;
+  width: 250px;
 }
 
 .header-actions-item {
@@ -86,20 +94,19 @@
 }
 
 .header-ul-item {
-  font-size: 15px;
-  color: black;
-  list-style: none;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.123);
+  color: white;
   margin-bottom: 10px;
+  list-style: none;
   border: 1.7px solid transparent;
   padding: 10px;
   transition: 0.2s;
-  border-radius: 15px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 .header-ul-item:hover {
-  transform: scale(1.05);
-  cursor: pointer;
-  border: 1.7px solid black;
+  border: 1.7px solid white;
 }
 
 /* MAIN */
