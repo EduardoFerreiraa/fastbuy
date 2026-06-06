@@ -50,15 +50,30 @@
           </div>
           <nav className="header-nav">
             <ul className="header-ul">
-              <li className="header-ul-item">Categorias <span>⌄</span></li>
-              <li className="header-ul-item">Smartphones <span>⌄</span></li>
-              <li className="header-ul-item">Informática <span>⌄</span></li>
-              <li className="header-ul-item">Games <span>⌄</span></li>
-              <li className="header-ul-item">TV e Áudio <span>⌄</span></li>
-              <li className="header-ul-item">Eletrodomésticos <span>⌄</span></li>
-              <li className="header-ul-item">Móveis <span>⌄</span></li>
-              <li className="header-ul-item">Eletrônicos <span>⌄</span></li>
-              <li className="header-ul-item">Casa e Decorações <span>⌄</span></li>
+              <li className="header-ul-item">
+                Categorias <span>⌄</span>
+              </li>
+              <li className="header-ul-item">
+                Smartphones <span>⌄</span>
+              </li>
+              <li className="header-ul-item">
+                Informática <span>⌄</span>
+              </li>
+              <li className="header-ul-item">
+                Games <span>⌄</span>
+              </li>
+              <li className="header-ul-item">
+                TV e Áudio <span>⌄</span>
+              </li>
+              <li className="header-ul-item">
+                Eletrodomésticos <span>⌄</span>
+              </li>
+              <li className="header-ul-item">
+                Móveis <span>⌄</span>
+              </li>
+              <li className="header-ul-item">
+                Eletrônicos <span>⌄</span>
+              </li>
             </ul>
           </nav>
         </header>
@@ -69,15 +84,17 @@
       return (
         <main id="main">
           <Carousel />
+          <CardProducts />
         </main>
       );
     }
 
     function Carousel() {
       const imagens = [
-        '../assets/images/banner-iphone.png',
+        '../assets/images/banner.png',
         '../assets/images/banner2.png',
         '../assets/images/banner3.png',
+        '../assets/images/banner4.png',
       ];
 
       const [index, setIndex] = React.useState(0);
@@ -110,6 +127,25 @@
           <button className="arrow-right" onClick={nextImage}>
             ❯
           </button>
+        </section>
+      );
+    }
+
+    function CardProducts() {
+      return (
+        <section className="products-alta">
+          <div className="card-alta">
+            <img src="../assets/images/maquina-de-lavar.png" alt="Máquina de lavar" />
+          </div>
+          <div className="card-alta">
+            <img src="../assets/images/monitor27-aoc.png" alt="Monitor 27p AOC" />
+          </div>
+          <div className="card-alta">
+            <img src="../assets/images/iphone17.png" alt="Iphone 17 Pro max" />
+          </div>
+          <div className="card-alta">
+            <img src="../assets/images/philips.png" alt="Tv Smart Philips" />
+          </div>
         </section>
       );
     }
