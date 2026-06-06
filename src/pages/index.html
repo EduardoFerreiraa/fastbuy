@@ -75,9 +75,9 @@
 
     function Carousel() {
       const imagens = [
-        '..assets/images/banner-iphone.png',
-        '..assets/images/banner2.png',
-        '..assets/images/banner3.png',
+        '../assets/images/banner-iphone.png',
+        '../assets/images/banner2.png',
+        '../assets/images/banner3.png',
       ];
 
       const [index, setIndex] = React.useState(0);
@@ -96,7 +96,12 @@
 
       return (
         <section className="carousel">
-          <img src={imagens[index]} alt="Banner" />
+          <img
+            key={index}
+            className="carousel-image"
+            src={imagens[index]}
+            alt="Banner"
+          />
 
           <button className="arrow-left" onClick={prevImage}>
             ❮
