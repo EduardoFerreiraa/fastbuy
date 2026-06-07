@@ -253,5 +253,81 @@ p.card-price {
 }
 
 .card-alta img:hover {
-  transform: scale(1.04);
+  transform: scale(1.06);
+}
+
+/* BENEFICIOS */
+
+.beneficios-content {
+  padding: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.beneficios-content h1 {
+  font-weight: bolder;
+  font-size: 2.5rem;
+}
+
+.beneficios-content span {
+  color: #4cb4e7;
+}
+
+.beneficios-content p {
+  color: rgb(75, 75, 75);
+  font-size: 1.08rem;
+  margin-top: 25px;
+}
+
+.beneficios {
+  margin-top: 50px;
+  display: flex;
+  width: 98%;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.cards-b {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.096);
+  background-color: white;
+  border-radius: 10px;
+  width: 100%;
+  height: 400px;
+  transition: 0.4s;
+  cursor: pointer;
+  border-bottom: 3px solid #4cb4e7;
+}
+
+.cards-b h2 {
+  font-weight: bolder;
+  font-size: 1.6rem;
+}
+
+.cards-b p {
+  text-align: center;
+}
+
+.cards-b:hover {
+  transform: translateY(-10px);
+}
+
+.cards-b:hover .arrow {
+  transform: translateX(8px);
+}
+
+.arrow {
+  color: #4cb4e7;
+  font-size: 25px;
+  top: 300px;
+  position: absolute;
+  transition: transform 0.35s ease;
 }
