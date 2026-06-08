@@ -341,7 +341,7 @@ p.card-price {
 }
 
 .categoria-content h2 {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   font-size: 2rem;
 }
 
@@ -355,11 +355,11 @@ p.card-price {
   flex-direction: column;
   width: 100%;
   height: 350px;
-  background-color: rgb(22, 22, 22);
-  border-bottom: 1px solid #0000ff;
-  border-top: 1px solid rgb(0, 119, 255);
+  background-color: rgb(255, 255, 255);
+  border-bottom: 2px solid #000000;
+  border-top: 2px solid rgb(0, 0, 0);
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.24);
-  color: white;
+  color: black;
   border-radius: 10px;
   transition: 0.4s;
   cursor: pointer;
@@ -381,8 +381,10 @@ p.card-price {
   transition: 0.35s ease;
 }
 
-.card-categoria img:hover {
-  transform: scale(1.05);
+.card-categoria:hover p,
+.card-categoria:hover img {
+  color: white;
+  transform: scale(1.06);
 }
 
 .card-categoria p {
@@ -412,4 +414,89 @@ p.card-price {
   transform: translateX(5px);
   background-color: #0000ff;
   color: white;
+}
+
+/* EXPLORE */
+
+.explore-content {
+  width: 95%;
+  margin: 10px auto;
+  border: 1px solid rgb(238, 238, 238);
+  box-shadow: 1px 1px 10px rgba(240, 240, 240, 0.37);
+  margin-bottom: 50px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.explore-content h2 {
+  padding: 15px;
+  margin: 10px 0 0 25px;
+  color: rgb(54, 54, 54);
+}
+
+.explore {
+  margin: 10px auto;
+  padding-bottom: 10px;
+  width: 95%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  gap: 15px;
+}
+
+.explore-card {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border: 1px solid rgb(221, 221, 221);
+  width: 300px;
+  height: 100%;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.35s;
+}
+
+.explore-card:hover {
+  transform: scale(1.03);
+  background-color: rgb(15, 15, 15);
+}
+
+.explore-card:hover img {
+  transform: scale(1.03);
+}
+
+.explore-card:hover p {
+  color: #e0e0e0;
+}
+
+.explore-card:hover .card-price {
+  color: rgb(255, 255, 255);
+}
+
+.explore-card img {
+  width: 75%;
+  margin-top: 15px;
+  transition: 0.35s;
+}
+
+.explore-card p {
+  color: gray;
+}
+
+.explore-card .card-price {
+  color: black;
+  font-size: 23px;
+}
+
+.explore-card div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 20px;
 }
