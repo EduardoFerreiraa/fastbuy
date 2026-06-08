@@ -259,6 +259,7 @@ p.card-price {
 /* BENEFICIOS */
 
 .beneficios-content {
+  margin-top: 40px;
   padding: 25px;
   width: 100%;
   display: flex;
@@ -273,7 +274,7 @@ p.card-price {
 }
 
 .beneficios-content span {
-  color: #4cb4e7;
+  color: #000099;
 }
 
 .beneficios-content p {
@@ -304,7 +305,7 @@ p.card-price {
   height: 400px;
   transition: 0.4s;
   cursor: pointer;
-  border-bottom: 3px solid #4cb4e7;
+  border-bottom: 3px solid #0000c7;
 }
 
 .cards-b h2 {
@@ -325,9 +326,90 @@ p.card-price {
 }
 
 .arrow {
-  color: #4cb4e7;
+  color: #0000ff;
   font-size: 25px;
   top: 300px;
   position: absolute;
   transition: transform 0.35s ease;
+}
+
+/* CATEGORIA */
+
+.categoria-content {
+  width: 95%;
+  margin: 80px auto;
+}
+
+.categoria-content h2 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.categoria {
+  width: 100%;
+  gap: 10px;
+}
+
+.card-categoria {
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  height: 350px;
+  background-color: rgb(22, 22, 22);
+  border-bottom: 1px solid #0000ff;
+  border-top: 1px solid rgb(0, 119, 255);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.24);
+  color: white;
+  border-radius: 10px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.card-categoria:hover {
+  background-color: rgb(36, 36, 36);
+  transform: translateY(-10px);
+}
+
+.card-categoria:active {
+  background-color: rgb(46, 46, 46);
+}
+
+.card-categoria img {
+  position: absolute;
+  width: 250px;
+  bottom: 150px;
+  transition: 0.35s ease;
+}
+
+.card-categoria img:hover {
+  transform: scale(1.05);
+}
+
+.card-categoria p {
+  font-size: 18px;
+  font-weight: bolder;
+  margin-top: 100px;
+}
+
+.categoria,
+.card-categoria {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-categoria .arrow {
+  border-radius: 50%;
+  position: relative;
+  top: 50px;
+  border: 1px solid #0000ff;
+  padding: 10px 14px;
+  color: rgb(0, 41, 226);
+  transition: 0.35s ease;
+}
+
+.card-categoria:hover .arrow {
+  transform: translateX(5px);
+  background-color: #0000ff;
+  color: white;
 }
