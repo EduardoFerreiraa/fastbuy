@@ -50,17 +50,398 @@
           </div>
           <nav className="header-nav">
             <ul className="header-ul">
-              <li className="header-ul-item">Categorias</li>
-              <li className="header-ul-item">Smartphones</li>
-              <li className="header-ul-item">Informática</li>
-              <li className="header-ul-item">Games</li>
-              <li className="header-ul-item">TV e Áudio</li>
-              <li className="header-ul-item">Eletrodomésticos</li>
-              <li className="header-ul-item">Móveis</li>
-              <li className="header-ul-item">Eletrônicos</li>
+              <li className="header-ul-item">
+                Categorias <span>⌄</span>
+              </li>
+              <li className="header-ul-item">
+                Smartphones <span>⌄</span>
+              </li>
+              <li className="header-ul-item">
+                Informática <span>⌄</span>
+              </li>
+              <li className="header-ul-item">
+                Games <span>⌄</span>
+              </li>
+              <li className="header-ul-item">
+                TV e Áudio <span>⌄</span>
+              </li>
+              <li className="header-ul-item">
+                Eletrodomésticos <span>⌄</span>
+              </li>
+              <li className="header-ul-item">
+                Móveis <span>⌄</span>
+              </li>
+              <li className="header-ul-item">
+                Eletrônicos <span>⌄</span>
+              </li>
             </ul>
           </nav>
         </header>
+      );
+    }
+
+    function Main() {
+      return (
+        <main id="main">
+          <Carousel />
+          <CardProducts />
+          <Beneficios />
+          <Categorias />
+          <Explore />
+        </main>
+      );
+    }
+
+    function Carousel() {
+      const imagens = [
+        '../assets/images/banner.png',
+        '../assets/images/banner2.png',
+        '../assets/images/banner3.png',
+        '../assets/images/banner4.png',
+      ];
+
+      const [index, setIndex] = React.useState(0);
+
+      function nextImage() {
+        setIndex((prevIndex) =>
+          prevIndex === imagens.length - 1 ? 0 : prevIndex + 1,
+        );
+      }
+
+      function prevImage() {
+        setIndex((prevIndex) =>
+          prevIndex === 0 ? imagens.length - 1 : prevIndex - 1,
+        );
+      }
+
+      return (
+        <section className="carousel">
+          <img
+            key={index}
+            className="carousel-image"
+            src={imagens[index]}
+            alt="Banner"
+          />
+
+          <button className="arrow-left" onClick={prevImage}>
+            ❮
+          </button>
+
+          <button className="arrow-right" onClick={nextImage}>
+            ❯
+          </button>
+        </section>
+      );
+    }
+
+    function CardProducts() {
+      return (
+        <section className="products-alta">
+          <div className="card-alta">
+            <h1>Mais vendidos</h1>
+            <img
+              src="../assets/images/maquina-de-lavar.png"
+              alt="Máquina de lavar"
+            />
+            <p>
+              Máquina de Lavar Brastemp 14kg com alta capacidade, painel moderno
+              e...
+            </p>
+            <p className="card-price">R$ 2.399,90</p>
+          </div>
+          <div className="card-alta">
+            <h1>Top da categoria</h1>
+            <img
+              src="../assets/images/monitor27-aoc.png"
+              alt="Monitor 27p AOC"
+            />
+            <p>
+              Monitor AOC 27” com tela ampla, imagens nítidas e excelente
+              qualidade...
+            </p>
+            <p className="card-price">R$ 899,90</p>
+          </div>
+          <div className="card-alta">
+            <h1>Destaques</h1>
+            <img src="../assets/images/iphone17.png" alt="Iphone 17 Pro max" />
+            <p>
+              iPhone 17 Pro Max com desempenho avançado, câmera <br></br> de
+              alta qualidade, tela ampla e...
+            </p>
+            <p className="card-price">R$ 10.499,90</p>
+          </div>
+          <div className="card-alta">
+            <h1>Melhores ofertas</h1>
+            <img src="../assets/images/philips.png" alt="Tv Smart Philips" />
+            <p>
+              Smart TV com tela de alta <br></br> definição, imagem nítida e{' '}
+              <br></br> acesso aos principais...
+            </p>
+            <p className="card-price">R$ 2.299,90</p>
+          </div>
+          <div className="card-alta">
+            <h1>Promoções</h1>
+            <img src="../assets/images/smartwatch.png" alt="Tv Smart Philips" />
+            <p>
+              Smartwatch com design <br></br> moderno, monitoramento de{' '}
+              <br></br> saúde, notificações...
+            </p>
+            <p className="card-price">R$ 2.399,90</p>
+          </div>
+        </section>
+      );
+    }
+
+    function Beneficios() {
+      return (
+        <section className="beneficios-content">
+          <h1>
+            Benefícios que <span>fazem a diferença</span>
+          </h1>
+          <p>
+            Aqui você compra com segurança, comodidade e as melhores condições
+          </p>
+          <div className="beneficios">
+            <div className="cards-b">
+              <h2>Frete grátis</h2>
+              <p>
+                Entrega para todo o Brasil <br></br> sem custo adicional.
+              </p>
+              <div className="arrow">➜</div>
+            </div>
+            <div className="cards-b">
+              <h2>Compra segura</h2>
+              <p>
+                Seus dados protegidos com <br></br> tecnologia pronta.
+              </p>
+              <div className="arrow">➜</div>
+            </div>
+            <div className="cards-b">
+              <h2>Parcele em até 12x</h2>
+              <p>
+                No cartão de crédito <br></br> sem juros.
+              </p>
+              <div className="arrow">➜</div>
+            </div>
+            <div className="cards-b">
+              <h2>Entrega rápida</h2>
+              <p>
+                Produtos à pronta entrega <br></br> e envio em até 24h
+              </p>
+              <div className="arrow">➜</div>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function Categorias() {
+      return (
+        <section className="categoria-content">
+          <h2>Escolha sua categoria</h2>
+          <div className="categoria">
+            <div className="card-categoria">
+              <img
+                src="../assets/images/smartphone-categoria.png"
+                alt="Smartphone"
+              />
+              <p>Smartphones</p>
+              <div className="arrow">➜</div>
+            </div>
+            <div className="card-categoria">
+              <img
+                src="../assets/images/notebook-categoria.png"
+                alt="Smartphone"
+              />
+              <p>Notebooks</p>
+              <div className="arrow">➜</div>
+            </div>
+            <div className="card-categoria">
+              <img src="../assets/images/tv-categoria.png" alt="Smartphone" />
+              <p>TVs</p>
+              <div className="arrow">➜</div>
+            </div>
+            <div className="card-categoria">
+              <img
+                src="../assets/images/smartwatch-categoria.png"
+                alt="Smartphone"
+              />
+              <p>Smartwatch</p>
+              <div className="arrow">➜</div>
+            </div>
+
+            <div className="card-categoria">
+              <img
+                src="../assets/images/controle-categoria.png"
+                alt="Smartphone"
+              />
+              <p>Games</p>
+              <div className="arrow">➜</div>
+            </div>
+            <div className="card-categoria">
+              <img src="../assets/images/tv-categoria.png" alt="Smartphone" />
+              <p>Monitores</p>
+              <div className="arrow">➜</div>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function Explore() {
+      return (
+        <section className="explore-content">
+          <h2>Conheça mais</h2>
+          <div className="explore">
+            <div className="explore-card">
+              <img
+                src="../assets/images/iphone17.png"
+                alt="Iphone 17 Pro max"
+              />
+              <div>
+                <p>
+                  Máquina de Lavar Brastemp 14kg com alta capacidade, painel
+                  moderno e...
+                </p>
+                <p className="card-price">R$ 2.399,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img
+                src="../assets/images/monitor27-aoc.png"
+                alt="Monitor 27p AOC"
+              />
+              <div>
+                <p>
+                  Máquina de Lavar Brastemp 14kg com alta capacidade, painel
+                  moderno e...
+                </p>
+                <p className="card-price">R$ 899,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img src="../assets/images/philips.png" alt="Tv Smart Philips" />
+              <div>
+                <p>
+                  Máquina de Lavar Brastemp 14kg com alta capacidade, painel
+                  moderno e...
+                </p>
+                <p className="card-price">R$ 2.399,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img
+                src="../assets/images/smartwatch.png"
+                alt="Tv Smart Philips"
+              />
+              <div>
+                <p>
+                  Máquina de Lavar Brastemp 14kg com alta capacidade, painel
+                  moderno e...
+                </p>
+                <p className="card-price">R$ 2.399,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img
+                src="../assets/images/monitor27-aoc.png"
+                alt="Monitor 27p AOC"
+              />
+              <div>
+                <p>
+                  Máquina de Lavar Brastemp 14kg com alta capacidade, painel
+                  moderno e...
+                </p>
+                <p className="card-price">R$ 899,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img
+                src="../assets/images/smartwatch.png"
+                alt="Tv Smart Philips"
+              />
+              <div>
+                <p>
+                  Máquina de Lavar Brastemp 14kg com alta capacidade, painel
+                  moderno e...
+                </p>
+                <p className="card-price">R$ 2.399,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img
+                src="../assets/images/iphone17.png"
+                alt="Iphone 17 Pro max"
+              />{' '}
+              <div>
+                <p>
+                  Máquina de Lavar Brastemp 14kg com alta capacidade, painel
+                  moderno e...
+                </p>
+                <p className="card-price">R$ 2.399,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img src="../assets/images/philips.png" alt="Tv Smart Philips" />
+              <div>
+                <p>
+                  Máquina de Lavar Brastemp 14kg com alta capacidade, painel
+                  moderno e...
+                </p>
+                <p className="card-price">R$ 2.399,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img src="../assets/images/philips.png" alt="Tv Smart Philips" />
+              <div>
+                <p>
+                  Máquina de Lavar Brastemp 14kg com alta capacidade, painel
+                  moderno e...
+                </p>
+                <p className="card-price">R$ 2.399,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img
+                src="../assets/images/monitor27-aoc.png"
+                alt="Monitor 27p AOC"
+              />
+              <div>
+                <p>
+                  Máquina de Lavar Brastemp 14kg com alta capacidade, painel
+                  moderno e...
+                </p>
+                <p className="card-price">R$ 899,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img
+                src="../assets/images/iphone17.png"
+                alt="Iphone 17 Pro max"
+              />{' '}
+              <div>
+                <p>
+                  Máquina de Lavar Brastemp 14kg com alta capacidade, painel
+                  moderno e...
+                </p>
+                <p className="card-price">R$ 2.399,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img
+                src="../assets/images/smartwatch.png"
+                alt="Tv Smart Philips"
+              />
+              <div>
+                <p>
+                  Máquina de Lavar Brastemp 14kg com alta capacidade, painel
+                  moderno e...
+                </p>
+                <p className="card-price">R$ 2.399,90</p>
+              </div>
+            </div>
+          </div>
+        </section>
       );
     }
 
@@ -68,6 +449,7 @@
       return (
         <div>
           <Header />
+          <Main />
         </div>
       );
     }
