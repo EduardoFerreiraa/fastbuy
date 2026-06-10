@@ -25,6 +25,26 @@
 
   <script type="text/babel">
     function Header() {
+      const [openMenu, setOpenMenu] = React.useState(null);
+      const menuRef = React.useRef(null);
+
+      function toggleOpenMenu(menu) {
+        setOpenMenu((prevMenu) => (prevMenu === menu ? null : menu));
+      }
+
+      React.useEffect(() => {
+        function handleClickOutside(event) {
+          if (menuRef.current && !menuRef.current.contains(event.target)) {
+            setOpenMenu(null);
+          }
+        }
+
+        document.addEventListener('click', handleClickOutside);
+        return () => {
+          document.removeEventListener('click', handleClickOutside);
+        };
+      }, []);
+
       return (
         <header id="header">
           <div id="header-content">
@@ -49,30 +69,174 @@
             </div>
           </div>
           <nav className="header-nav">
-            <ul className="header-ul">
-              <li className="header-ul-item">
+            <ul ref={menuRef} className="header-ul">
+              <li
+                onClick={() => toggleOpenMenu('categoria')}
+                className={`header-ul-item ${
+                  openMenu === 'categoria' ? 'active' : ''
+                }`}
+              >
                 Categorias <span>⌄</span>
+                {openMenu === 'categoria' && (
+                  <ul className="dropdown-menu">
+                    <li>Smartphones</li>
+                    <li>Informática</li>
+                    <li>Games</li>
+                    <li>TV e Áudio</li>
+                    <li>Eletrodomésticos</li>
+                    <li>Cozinha</li>
+                    <li>Quarto</li>
+                  </ul>
+                )}
               </li>
-              <li className="header-ul-item">
+
+              <li
+                onClick={() => toggleOpenMenu('smartphones')}
+                className={`header-ul-item ${
+                  openMenu === 'smartphones' ? 'active' : ''
+                }`}
+              >
                 Smartphones <span>⌄</span>
+                {openMenu === 'smartphones' && (
+                  <ul className="dropdown-menu">
+                    <li>iPhone</li>
+                    <li>Samsung</li>
+                    <li>Xiaomi</li>
+                    <li>Motorola</li>
+                  </ul>
+                )}
               </li>
-              <li className="header-ul-item">
+              <li
+                onClick={() => toggleOpenMenu('informatica')}
+                className={`header-ul-item ${
+                  openMenu === 'informatica' ? 'active' : ''
+                }`}
+              >
                 Informática <span>⌄</span>
+                {openMenu === 'informatica' && (
+                  <ul className="dropdown-menu">
+                    <li>Notebooks</li>
+                    <li>Monitores</li>
+                    <li>Teclados</li>
+                    <li>Mouse</li>
+                    <li>Headsets</li>
+                    <li>Impressoras</li>
+                    <li>Gabinetes</li>
+                    <li>SSD e HD</li>
+                    <li>Memória RAM</li>
+                    <li>Placa de Vídeo</li>
+                  </ul>
+                )}
               </li>
-              <li className="header-ul-item">
+              <li
+                onClick={() => toggleOpenMenu('games')}
+                className={`header-ul-item ${
+                  openMenu === 'games' ? 'active' : ''
+                }`}
+              >
                 Games <span>⌄</span>
+                {openMenu === 'games' && (
+                  <ul className="dropdown-menu">
+                    <li>Consoles</li>
+                    <li>Jogos</li>
+                    <li>Controles</li>
+                    <li>Headsets Gamer</li>
+                    <li>Cadeiras Gamer</li>
+                    <li>Teclados Gamer</li>
+                    <li>Mouse Gamer</li>
+                    <li>Monitores Gamer</li>
+                    <li>PlayStation</li>
+                    <li>Xbox</li>
+                  </ul>
+                )}
               </li>
-              <li className="header-ul-item">
+              <li
+                onClick={() => toggleOpenMenu('tv-audio')}
+                className={`header-ul-item ${
+                  openMenu === 'tv-audio' ? 'active' : ''
+                }`}
+              >
                 TV e Áudio <span>⌄</span>
+                {openMenu === 'tv-audio' && (
+                  <ul className="dropdown-menu">
+                    <li>Smart TVs</li>
+                    <li>Caixas de Som</li>
+                    <li>Soundbar</li>
+                    <li>Fones de Ouvido</li>
+                    <li>Home Theater</li>
+                    <li>Projetores</li>
+                    <li>TV 4K</li>
+                    <li>TV OLED</li>
+                    <li>TV QLED</li>
+                    <li>Acessórios de Áudio</li>
+                  </ul>
+                )}
               </li>
-              <li className="header-ul-item">
+              <li
+                onClick={() => toggleOpenMenu('eletrodomesticos')}
+                className={`header-ul-item ${
+                  openMenu === 'eletrodomesticos' ? 'active' : ''
+                }`}
+              >
                 Eletrodomésticos <span>⌄</span>
+                {openMenu === 'eletrodomesticos' && (
+                  <ul className="dropdown-menu">
+                    <li>Geladeiras</li>
+                    <li>Micro-ondas</li>
+                    <li>Máquinas de Lavar</li>
+                    <li>Fogões</li>
+                    <li>Cooktops</li>
+                    <li>Air Fryers</li>
+                    <li>Liquidificadores</li>
+                    <li>Cafeteiras</li>
+                    <li>Ventiladores</li>
+                    <li>Aspiradores</li>
+                  </ul>
+                )}
               </li>
-              <li className="header-ul-item">
+              <li
+                onClick={() => toggleOpenMenu('moveis')}
+                className={`header-ul-item ${
+                  openMenu === 'moveis' ? 'active' : ''
+                }`}
+              >
                 Móveis <span>⌄</span>
+                {openMenu === 'moveis' && (
+                  <ul className="dropdown-menu">
+                    <li>Sofás</li>
+                    <li>Guarda-Roupas</li>
+                    <li>Camas</li>
+                    <li>Mesas</li>
+                    <li>Cadeiras</li>
+                    <li>Painéis para TV</li>
+                    <li>Escrivaninhas</li>
+                    <li>Poltronas</li>
+                    <li>Estantes</li>
+                    <li>Móveis para Escritório</li>
+                  </ul>
+                )}
               </li>
-              <li className="header-ul-item">
+              <li
+                onClick={() => toggleOpenMenu('eletronicos')}
+                className={`header-ul-item ${
+                  openMenu === 'eletronicos' ? 'active' : ''
+                }`}
+              >
                 Eletrônicos <span>⌄</span>
+                {openMenu === 'eletronicos' && (
+                  <ul className="dropdown-menu">
+                    <li>Smartphones</li>
+                    <li>Smartwatch</li>
+                    <li>Tablets</li>
+                    <li>Fones Bluetooth</li>
+                    <li>Caixas de Som</li>
+                    <li>Câmeras</li>
+                    <li>Drones</li>
+                    <li>Carregadores</li>
+                    <li>Cabos e Adaptadores</li>
+                    <li>Acessórios Tech</li>
+                  </ul>
+                )}
               </li>
             </ul>
           </nav>
@@ -88,6 +252,8 @@
           <Beneficios />
           <Categorias />
           <Explore />
+          <Destaques />
+          <Cozinha />
         </main>
       );
     }
@@ -165,8 +331,8 @@
             <h1>Destaques</h1>
             <img src="../assets/images/iphone17.png" alt="Iphone 17 Pro max" />
             <p>
-              iPhone 17 Pro Max com desempenho avançado, câmera <br></br> de
-              alta qualidade, tela ampla e...
+              iPhone 17 Pro Max com <br></br> desempenho avançado, câmera{' '}
+              <br></br> de alta qualidade, tela ampla e...
             </p>
             <p className="card-price">R$ 10.499,90</p>
           </div>
@@ -186,7 +352,7 @@
               Smartwatch com design <br></br> moderno, monitoramento de{' '}
               <br></br> saúde, notificações...
             </p>
-            <p className="card-price">R$ 2.399,90</p>
+            <p className="card-price">R$ 559,90</p>
           </div>
         </section>
       );
@@ -300,10 +466,10 @@
               />
               <div>
                 <p>
-                  Máquina de Lavar Brastemp 14kg com alta capacidade, painel
-                  moderno e...
+                  iPhone 17 Pro Max com desempenho avançado, câmera <br></br> de
+                  alta qualidade, tela ampla e...
                 </p>
-                <p className="card-price">R$ 2.399,90</p>
+                <p className="card-price">R$ 10.499,90</p>
               </div>
             </div>
             <div className="explore-card">
@@ -323,6 +489,32 @@
               <img src="../assets/images/philips.png" alt="Tv Smart Philips" />
               <div>
                 <p>
+                  Smart TV com tela de alta definição, imagem nítida e <br></br>{' '}
+                  acesso aos principais...
+                </p>
+                <p className="card-price">R$ 2.299,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img
+                src="../assets/images/smartwatch.png"
+                alt="Tv Smart Philips"
+              />
+              <div>
+                <p>
+                  Smartwatch com design moderno, monitoramento de <br></br>{' '}
+                  saúde, notificações...
+                </p>
+                <p className="card-price">R$ 559,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img
+                src="../assets/images/maquina-de-lavar.png"
+                alt="Máquina de lavar"
+              />
+              <div>
+                <p>
                   Máquina de Lavar Brastemp 14kg com alta capacidade, painel
                   moderno e...
                 </p>
@@ -336,36 +528,10 @@
               />
               <div>
                 <p>
-                  Máquina de Lavar Brastemp 14kg com alta capacidade, painel
-                  moderno e...
+                  Smartwatch com design moderno, monitoramento de <br></br>{' '}
+                  saúde, notificações...
                 </p>
-                <p className="card-price">R$ 2.399,90</p>
-              </div>
-            </div>
-            <div className="explore-card">
-              <img
-                src="../assets/images/monitor27-aoc.png"
-                alt="Monitor 27p AOC"
-              />
-              <div>
-                <p>
-                  Máquina de Lavar Brastemp 14kg com alta capacidade, painel
-                  moderno e...
-                </p>
-                <p className="card-price">R$ 899,90</p>
-              </div>
-            </div>
-            <div className="explore-card">
-              <img
-                src="../assets/images/smartwatch.png"
-                alt="Tv Smart Philips"
-              />
-              <div>
-                <p>
-                  Máquina de Lavar Brastemp 14kg com alta capacidade, painel
-                  moderno e...
-                </p>
-                <p className="card-price">R$ 2.399,90</p>
+                <p className="card-price">R$ 559,90</p>
               </div>
             </div>
             <div className="explore-card">
@@ -375,37 +541,47 @@
               />{' '}
               <div>
                 <p>
-                  Máquina de Lavar Brastemp 14kg com alta capacidade, painel
-                  moderno e...
+                  iPhone 17 Pro Max com desempenho avançado, câmera <br></br> de
+                  alta qualidade, tela ampla e...
                 </p>
-                <p className="card-price">R$ 2.399,90</p>
+                <p className="card-price">R$ 10.499,90</p>
               </div>
             </div>
             <div className="explore-card">
               <img src="../assets/images/philips.png" alt="Tv Smart Philips" />
               <div>
                 <p>
-                  Máquina de Lavar Brastemp 14kg com alta capacidade, painel
-                  moderno e...
+                  Smart TV com tela de alta definição, imagem nítida e <br></br>{' '}
+                  acesso aos principais...
                 </p>
-                <p className="card-price">R$ 2.399,90</p>
+                <p className="card-price">R$ 2.299,90</p>
               </div>
             </div>
-            <div className="explore-card">
-              <img src="../assets/images/philips.png" alt="Tv Smart Philips" />
-              <div>
-                <p>
-                  Máquina de Lavar Brastemp 14kg com alta capacidade, painel
-                  moderno e...
-                </p>
-                <p className="card-price">R$ 2.399,90</p>
-              </div>
-            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function Destaques() {
+      return (
+        <section className="explore-content">
+          <h2>Destaques da semana</h2>
+          <div className="explore">
             <div className="explore-card">
               <img
-                src="../assets/images/monitor27-aoc.png"
-                alt="Monitor 27p AOC"
+                src="../assets/images/notebook.png"
+                alt="Iphone 17 Pro max"
               />
+              <div>
+                <p>
+                  iPhone 17 Pro Max com desempenho avançado, câmera <br></br> de
+                  alta qualidade, tela ampla e...
+                </p>
+                <p className="card-price">R$ 10.499,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img src="../assets/images/fone.png" alt="Monitor 27p AOC" />
               <div>
                 <p>
                   Máquina de Lavar Brastemp 14kg com alta capacidade, painel
@@ -416,28 +592,81 @@
             </div>
             <div className="explore-card">
               <img
-                src="../assets/images/iphone17.png"
-                alt="Iphone 17 Pro max"
-              />{' '}
-              <div>
-                <p>
-                  Máquina de Lavar Brastemp 14kg com alta capacidade, painel
-                  moderno e...
-                </p>
-                <p className="card-price">R$ 2.399,90</p>
-              </div>
-            </div>
-            <div className="explore-card">
-              <img
-                src="../assets/images/smartwatch.png"
+                src="../assets/images/travesseiro.png"
                 alt="Tv Smart Philips"
               />
               <div>
                 <p>
+                  Smart TV com tela de alta definição, imagem nítida e <br></br>{' '}
+                  acesso aos principais...
+                </p>
+                <p className="card-price">R$ 2.299,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img src="../assets/images/notebook.png" alt="Tv Smart Philips" />
+              <div>
+                <p>
+                  Smartwatch com design moderno, monitoramento de <br></br>{' '}
+                  saúde, notificações...
+                </p>
+                <p className="card-price">R$ 559,90</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function Cozinha() {
+      return (
+        <section className="explore-content">
+          <h2>Para sua cozinha</h2>
+          <div className="explore">
+            <div className="explore-card">
+              <img
+                src="../assets/images/geladeira.png"
+                alt="Iphone 17 Pro max"
+              />
+              <div>
+                <p>
+                  iPhone 17 Pro Max com desempenho avançado, câmera <br></br> de
+                  alta qualidade, tela ampla e...
+                </p>
+                <p className="card-price">R$ 10.499,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img src="../assets/images/fogão.png" alt="Monitor 27p AOC" />
+              <div>
+                <p>
                   Máquina de Lavar Brastemp 14kg com alta capacidade, painel
                   moderno e...
                 </p>
-                <p className="card-price">R$ 2.399,90</p>
+                <p className="card-price">R$ 899,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img src="../assets/images/panela.png" alt="Tv Smart Philips" />
+              <div>
+                <p>
+                  Smart TV com tela de alta definição, imagem nítida e <br></br>{' '}
+                  acesso aos principais...
+                </p>
+                <p className="card-price">R$ 2.299,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img
+                src="../assets/images/geladeira.png"
+                alt="Tv Smart Philips"
+              />
+              <div>
+                <p>
+                  Smartwatch com design moderno, monitoramento de <br></br>{' '}
+                  saúde, notificações...
+                </p>
+                <p className="card-price">R$ 559,90</p>
               </div>
             </div>
           </div>
