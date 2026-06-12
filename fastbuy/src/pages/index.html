@@ -1,0 +1,819 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fastbuy</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+
+  <script type="text/babel">
+    function Header() {
+      const [openMenu, setOpenMenu] = React.useState(null);
+      const menuRef = React.useRef(null);
+
+      function toggleOpenMenu(menu) {
+        setOpenMenu((prevMenu) => (prevMenu === menu ? null : menu));
+      }
+
+      React.useEffect(() => {
+        function handleClickOutside(event) {
+          if (menuRef.current && !menuRef.current.contains(event.target)) {
+            setOpenMenu(null);
+          }
+        }
+
+        document.addEventListener('click', handleClickOutside);
+        return () => {
+          document.removeEventListener('click', handleClickOutside);
+        };
+      }, []);
+
+      return (
+        <header id="header">
+          <div id="header-content">
+            <div id="logo-content">
+              <a href="index.html">
+                <img
+                  id="header-logo"
+                  src="../assets/logo/logo-fast.png"
+                  alt="Logo"
+                />
+              </a>
+              <button id="buscar-cep">Digite o seu CEP</button>
+            </div>
+            <input type="text" id="busca" placeholder="Busque na Fastbuy" />
+            <div className="header-actions">
+              <a className="header-actions-item" href="#">
+                <img src="../assets/icons/heart.png" alt="Favoritos" />
+              </a>
+              <a className="header-actions-item" href="#">
+                <img src="../assets/icons/shopping-bag.png" alt="Carrinho" />
+              </a>
+            </div>
+          </div>
+          <nav className="header-nav">
+            <ul ref={menuRef} className="header-ul">
+              <li
+                onClick={() => toggleOpenMenu('categoria')}
+                className={`header-ul-item ${
+                  openMenu === 'categoria' ? 'active' : ''
+                }`}
+              >
+                Categorias <span>⌄</span>
+                {openMenu === 'categoria' && (
+                  <ul className="dropdown-menu">
+                    <li>Smartphones</li>
+                    <li>Informática</li>
+                    <li>Games</li>
+                    <li>TV e Áudio</li>
+                    <li>Eletrodomésticos</li>
+                    <li>Cozinha</li>
+                    <li>Quarto</li>
+                  </ul>
+                )}
+              </li>
+
+              <li
+                onClick={() => toggleOpenMenu('smartphones')}
+                className={`header-ul-item ${
+                  openMenu === 'smartphones' ? 'active' : ''
+                }`}
+              >
+                Smartphones <span>⌄</span>
+                {openMenu === 'smartphones' && (
+                  <ul className="dropdown-menu">
+                    <li>iPhone</li>
+                    <li>Samsung</li>
+                    <li>Xiaomi</li>
+                    <li>Motorola</li>
+                  </ul>
+                )}
+              </li>
+              <li
+                onClick={() => toggleOpenMenu('informatica')}
+                className={`header-ul-item ${
+                  openMenu === 'informatica' ? 'active' : ''
+                }`}
+              >
+                Informática <span>⌄</span>
+                {openMenu === 'informatica' && (
+                  <ul className="dropdown-menu">
+                    <li>Notebooks</li>
+                    <li>Monitores</li>
+                    <li>Teclados</li>
+                    <li>Mouse</li>
+                    <li>Headsets</li>
+                    <li>Impressoras</li>
+                    <li>Gabinetes</li>
+                    <li>SSD e HD</li>
+                    <li>Memória RAM</li>
+                    <li>Placa de Vídeo</li>
+                  </ul>
+                )}
+              </li>
+              <li
+                onClick={() => toggleOpenMenu('games')}
+                className={`header-ul-item ${
+                  openMenu === 'games' ? 'active' : ''
+                }`}
+              >
+                Games <span>⌄</span>
+                {openMenu === 'games' && (
+                  <ul className="dropdown-menu">
+                    <li>Consoles</li>
+                    <li>Jogos</li>
+                    <li>Controles</li>
+                    <li>Headsets Gamer</li>
+                    <li>Cadeiras Gamer</li>
+                    <li>Teclados Gamer</li>
+                    <li>Mouse Gamer</li>
+                    <li>Monitores Gamer</li>
+                    <li>PlayStation</li>
+                    <li>Xbox</li>
+                  </ul>
+                )}
+              </li>
+              <li
+                onClick={() => toggleOpenMenu('tv-audio')}
+                className={`header-ul-item ${
+                  openMenu === 'tv-audio' ? 'active' : ''
+                }`}
+              >
+                TV e Áudio <span>⌄</span>
+                {openMenu === 'tv-audio' && (
+                  <ul className="dropdown-menu">
+                    <li>Smart TVs</li>
+                    <li>Caixas de Som</li>
+                    <li>Soundbar</li>
+                    <li>Fones de Ouvido</li>
+                    <li>Home Theater</li>
+                    <li>Projetores</li>
+                    <li>TV 4K</li>
+                    <li>TV OLED</li>
+                    <li>TV QLED</li>
+                    <li>Acessórios de Áudio</li>
+                  </ul>
+                )}
+              </li>
+              <li
+                onClick={() => toggleOpenMenu('eletrodomesticos')}
+                className={`header-ul-item ${
+                  openMenu === 'eletrodomesticos' ? 'active' : ''
+                }`}
+              >
+                Eletrodomésticos <span>⌄</span>
+                {openMenu === 'eletrodomesticos' && (
+                  <ul className="dropdown-menu">
+                    <li>Geladeiras</li>
+                    <li>Micro-ondas</li>
+                    <li>Máquinas de Lavar</li>
+                    <li>Fogões</li>
+                    <li>Cooktops</li>
+                    <li>Air Fryers</li>
+                    <li>Liquidificadores</li>
+                    <li>Cafeteiras</li>
+                    <li>Ventiladores</li>
+                    <li>Aspiradores</li>
+                  </ul>
+                )}
+              </li>
+              <li
+                onClick={() => toggleOpenMenu('moveis')}
+                className={`header-ul-item ${
+                  openMenu === 'moveis' ? 'active' : ''
+                }`}
+              >
+                Móveis <span>⌄</span>
+                {openMenu === 'moveis' && (
+                  <ul className="dropdown-menu">
+                    <li>Sofás</li>
+                    <li>Guarda-Roupas</li>
+                    <li>Camas</li>
+                    <li>Mesas</li>
+                    <li>Cadeiras</li>
+                    <li>Painéis para TV</li>
+                    <li>Escrivaninhas</li>
+                    <li>Poltronas</li>
+                    <li>Estantes</li>
+                    <li>Móveis para Escritório</li>
+                  </ul>
+                )}
+              </li>
+              <li
+                onClick={() => toggleOpenMenu('eletronicos')}
+                className={`header-ul-item ${
+                  openMenu === 'eletronicos' ? 'active' : ''
+                }`}
+              >
+                Eletrônicos <span>⌄</span>
+                {openMenu === 'eletronicos' && (
+                  <ul className="dropdown-menu">
+                    <li>Smartphones</li>
+                    <li>Smartwatch</li>
+                    <li>Tablets</li>
+                    <li>Fones Bluetooth</li>
+                    <li>Caixas de Som</li>
+                    <li>Câmeras</li>
+                    <li>Drones</li>
+                    <li>Carregadores</li>
+                    <li>Cabos e Adaptadores</li>
+                    <li>Acessórios Tech</li>
+                  </ul>
+                )}
+              </li>
+            </ul>
+          </nav>
+        </header>
+      );
+    }
+
+    function Main() {
+      return (
+        <main id="main">
+          <Carousel />
+          <CardProducts />
+          <Beneficios />
+          <Categorias />
+          <Explore />
+          <Destaques />
+          <Cozinha />
+        </main>
+      );
+    }
+
+    function Carousel() {
+      const imagens = [
+        '../assets/images/banner.png',
+        '../assets/images/banner2.png',
+        '../assets/images/banner3.png',
+        '../assets/images/banner4.png',
+      ];
+
+      const [index, setIndex] = React.useState(0);
+
+      function nextImage() {
+        setIndex((prevIndex) =>
+          prevIndex === imagens.length - 1 ? 0 : prevIndex + 1,
+        );
+      }
+
+      function prevImage() {
+        setIndex((prevIndex) =>
+          prevIndex === 0 ? imagens.length - 1 : prevIndex - 1,
+        );
+      }
+
+      return (
+        <section className="carousel">
+          <img
+            key={index}
+            className="carousel-image"
+            src={imagens[index]}
+            alt="Banner"
+          />
+
+          <button className="arrow-left" onClick={prevImage}>
+            ❮
+          </button>
+
+          <button className="arrow-right" onClick={nextImage}>
+            ❯
+          </button>
+        </section>
+      );
+    }
+
+    function CardProducts() {
+      return (
+        <section className="products-alta">
+          <div className="card-alta">
+            <h1>Mais vendidos</h1>
+            <img
+              src="../assets/images/maquina-de-lavar.png"
+              alt="Máquina de lavar"
+            />
+            <p>
+              Máquina de Lavar Brastemp 14kg com alta capacidade, painel moderno
+              e...
+            </p>
+            <p className="card-price">R$ 2.399,90</p>
+          </div>
+          <div className="card-alta">
+            <h1>Top da categoria</h1>
+            <img
+              src="../assets/images/monitor27-aoc.png"
+              alt="Monitor 27p AOC"
+            />
+            <p>
+              Monitor AOC 27” com tela ampla, imagens nítidas e excelente
+              qualidade...
+            </p>
+            <p className="card-price">R$ 899,90</p>
+          </div>
+          <div className="card-alta">
+            <h1>Destaques</h1>
+            <img src="../assets/images/iphone17.png" alt="Iphone 17 Pro max" />
+            <p>
+              iPhone 17 Pro Max com <br></br> desempenho avançado, câmera{' '}
+              <br></br> de alta qualidade, tela ampla e...
+            </p>
+            <p className="card-price">R$ 10.499,90</p>
+          </div>
+          <div className="card-alta">
+            <h1>Melhores ofertas</h1>
+            <img src="../assets/images/philips.png" alt="Tv Smart Philips" />
+            <p>
+              Smart TV com tela de alta <br></br> definição, imagem nítida e{' '}
+              <br></br> acesso aos principais...
+            </p>
+            <p className="card-price">R$ 2.299,90</p>
+          </div>
+          <div className="card-alta">
+            <h1>Promoções</h1>
+            <img src="../assets/images/smartwatch.png" alt="Tv Smart Philips" />
+            <p>
+              Smartwatch com design <br></br> moderno, monitoramento de{' '}
+              <br></br> saúde, notificações...
+            </p>
+            <p className="card-price">R$ 559,90</p>
+          </div>
+        </section>
+      );
+    }
+
+    function Beneficios() {
+      return (
+        <section className="beneficios-content">
+          <h1>
+            Benefícios que <span>fazem a diferença</span>
+          </h1>
+          <p>
+            Aqui você compra com segurança, comodidade e as melhores condições
+          </p>
+          <div className="beneficios">
+            <div className="cards-b">
+              <h2>Frete grátis</h2>
+              <p>
+                Entrega para todo o Brasil <br></br> sem custo adicional.
+              </p>
+              <div className="arrow">➜</div>
+            </div>
+            <div className="cards-b">
+              <h2>Compra segura</h2>
+              <p>
+                Seus dados protegidos com <br></br> tecnologia pronta.
+              </p>
+              <div className="arrow">➜</div>
+            </div>
+            <div className="cards-b">
+              <h2>Parcele em até 12x</h2>
+              <p>
+                No cartão de crédito <br></br> sem juros.
+              </p>
+              <div className="arrow">➜</div>
+            </div>
+            <div className="cards-b">
+              <h2>Entrega rápida</h2>
+              <p>
+                Produtos à pronta entrega <br></br> e envio em até 24h
+              </p>
+              <div className="arrow">➜</div>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function Categorias() {
+      return (
+        <section className="categoria-content">
+          <h2>Escolha sua categoria</h2>
+          <div className="categoria">
+            <div className="card-categoria">
+              <img
+                src="../assets/images/smartphone-categoria.png"
+                alt="Smartphone"
+              />
+              <p>Smartphones</p>
+              <div className="arrow">➜</div>
+            </div>
+            <div className="card-categoria">
+              <img
+                src="../assets/images/notebook-categoria.png"
+                alt="Smartphone"
+              />
+              <p>Notebooks</p>
+              <div className="arrow">➜</div>
+            </div>
+            <div className="card-categoria">
+              <img src="../assets/images/tv-categoria.png" alt="Smartphone" />
+              <p>TVs</p>
+              <div className="arrow">➜</div>
+            </div>
+            <div className="card-categoria">
+              <img
+                src="../assets/images/smartwatch-categoria.png"
+                alt="Smartphone"
+              />
+              <p>Smartwatch</p>
+              <div className="arrow">➜</div>
+            </div>
+
+            <div className="card-categoria">
+              <img
+                src="../assets/images/controle-categoria.png"
+                alt="Smartphone"
+              />
+              <p>Games</p>
+              <div className="arrow">➜</div>
+            </div>
+            <div className="card-categoria">
+              <img src="../assets/images/tv-categoria.png" alt="Smartphone" />
+              <p>Monitores</p>
+              <div className="arrow">➜</div>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function Explore() {
+      return (
+        <section className="explore-content">
+          <h2>Conheça mais</h2>
+          <div className="explore">
+            <div className="explore-card">
+              <img
+                src="../assets/images/iphone17.png"
+                alt="Iphone 17 Pro max"
+              />
+              <div>
+                <p>
+                  iPhone 17 Pro Max com desempenho avançado, câmera <br></br> de
+                  alta qualidade, tela ampla e...
+                </p>
+                <p className="card-price">R$ 10.499,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img
+                src="../assets/images/monitor27-aoc.png"
+                alt="Monitor 27p AOC"
+              />
+              <div>
+                <p>
+                  Máquina de Lavar Brastemp 14kg com alta capacidade, painel
+                  moderno e...
+                </p>
+                <p className="card-price">R$ 899,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img src="../assets/images/philips.png" alt="Tv Smart Philips" />
+              <div>
+                <p>
+                  Smart TV com tela de alta definição, imagem nítida e <br></br>{' '}
+                  acesso aos principais...
+                </p>
+                <p className="card-price">R$ 2.299,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img
+                src="../assets/images/smartwatch.png"
+                alt="Tv Smart Philips"
+              />
+              <div>
+                <p>
+                  Smartwatch com design moderno, monitoramento de <br></br>{' '}
+                  saúde, notificações...
+                </p>
+                <p className="card-price">R$ 559,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img
+                src="../assets/images/maquina-de-lavar.png"
+                alt="Máquina de lavar"
+              />
+              <div>
+                <p>
+                  Máquina de Lavar Brastemp 14kg com alta capacidade, painel
+                  moderno e...
+                </p>
+                <p className="card-price">R$ 2.399,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img
+                src="../assets/images/smartwatch.png"
+                alt="Tv Smart Philips"
+              />
+              <div>
+                <p>
+                  Smartwatch com design moderno, monitoramento de <br></br>{' '}
+                  saúde, notificações...
+                </p>
+                <p className="card-price">R$ 559,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img
+                src="../assets/images/iphone17.png"
+                alt="Iphone 17 Pro max"
+              />{' '}
+              <div>
+                <p>
+                  iPhone 17 Pro Max com desempenho avançado, câmera <br></br> de
+                  alta qualidade, tela ampla e...
+                </p>
+                <p className="card-price">R$ 10.499,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img src="../assets/images/philips.png" alt="Tv Smart Philips" />
+              <div>
+                <p>
+                  Smart TV com tela de alta definição, imagem nítida e <br></br>{' '}
+                  acesso aos principais...
+                </p>
+                <p className="card-price">R$ 2.299,90</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function Destaques() {
+      return (
+        <section className="explore-content">
+          <h2>Destaques da semana</h2>
+          <div className="explore">
+            <div className="explore-card">
+              <img
+                src="../assets/images/notebook.png"
+                alt="Iphone 17 Pro max"
+              />
+              <div>
+                <p>
+                  iPhone 17 Pro Max com desempenho avançado, câmera <br></br> de
+                  alta qualidade, tela ampla e...
+                </p>
+                <p className="card-price">R$ 10.499,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img src="../assets/images/fone.png" alt="Monitor 27p AOC" />
+              <div>
+                <p>
+                  Máquina de Lavar Brastemp 14kg com alta capacidade, painel
+                  moderno e...
+                </p>
+                <p className="card-price">R$ 899,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img
+                src="../assets/images/travesseiro.png"
+                alt="Tv Smart Philips"
+              />
+              <div>
+                <p>
+                  Smart TV com tela de alta definição, imagem nítida e <br></br>{' '}
+                  acesso aos principais...
+                </p>
+                <p className="card-price">R$ 2.299,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img src="../assets/images/notebook.png" alt="Tv Smart Philips" />
+              <div>
+                <p>
+                  Smartwatch com design moderno, monitoramento de <br></br>{' '}
+                  saúde, notificações...
+                </p>
+                <p className="card-price">R$ 559,90</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function Cozinha() {
+      return (
+        <section className="explore-content">
+          <h2>Para sua cozinha</h2>
+          <div className="explore">
+            <div className="explore-card">
+              <img
+                src="../assets/images/geladeira.png"
+                alt="Iphone 17 Pro max"
+              />
+              <div>
+                <p>
+                  iPhone 17 Pro Max com desempenho avançado, câmera <br></br> de
+                  alta qualidade, tela ampla e...
+                </p>
+                <p className="card-price">R$ 10.499,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img src="../assets/images/fogão.png" alt="Monitor 27p AOC" />
+              <div>
+                <p>
+                  Máquina de Lavar Brastemp 14kg com alta capacidade, painel
+                  moderno e...
+                </p>
+                <p className="card-price">R$ 899,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img src="../assets/images/panela.png" alt="Tv Smart Philips" />
+              <div>
+                <p>
+                  Smart TV com tela de alta definição, imagem nítida e <br></br>{' '}
+                  acesso aos principais...
+                </p>
+                <p className="card-price">R$ 2.299,90</p>
+              </div>
+            </div>
+            <div className="explore-card">
+              <img
+                src="../assets/images/geladeira.png"
+                alt="Tv Smart Philips"
+              />
+              <div>
+                <p>
+                  Smartwatch com design moderno, monitoramento de <br></br>{' '}
+                  saúde, notificações...
+                </p>
+                <p className="card-price">R$ 559,90</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function Footer() {
+      return (
+        <footer className="footer">
+          <div className="footer-actions">
+            <div className="footer-logo">
+              <img
+                id="header-logo"
+                src="../assets/logo/logo-fast.png"
+                alt="Logo"
+              />{' '}
+              <p>
+                Tecnologia, inovação e os melhores <br></br> produtos para você
+                comprar com <br></br> segurança e rapidez.
+              </p>
+              <p id="siga-nos">Siga-nos</p>
+              <div>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+              </div>
+            </div>
+            <div className="atendimento">
+              <h3>Links rápidos</h3>
+              <div className="links-content">
+                <a href="#">Home</a>
+                <a href="#">Produtos</a>
+                <a href="#">Categorias</a>
+                <a href="#">Ofertas</a>
+                <a href="#">Lançamentos</a>
+                <a href="#">Meus pedidos</a>
+                <a href="#">Contato</a>
+              </div>
+            </div>
+
+            <div className="atendimento">
+              <h3>Atendimento</h3>
+              <div className="atendimento-content">
+                <div className="contact">
+                  <img src="" alt="" />
+                  <div>
+                    <p>(11) 99999-9999</p>
+                    <p className="contact-text">Seg à Sex - 08 às 18h</p>
+                  </div>
+                </div>
+                <div className="contact">
+                  <img src="" alt="" />
+                  <div className="contact-text">
+                    <p>contato@fastbuy.com</p>
+                    <p className="contact-text">Respondemos em breve</p>
+                  </div>
+                </div>
+                <div className="contact">
+                  <img src="" alt="" />
+                  <div className="contact-text">
+                    <p>(11) 99999-9999</p>
+                    <p className="contact-text">Fale conosco no WhatsApp</p>
+                  </div>
+                </div>
+                <div className="contact">
+                  <img src="" alt="" />
+                  <div className="contact-text">
+                    <p>Central de ajuda</p>
+                    <p className="contact-text">Tire suas dúvidas</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="pagamento-content">
+              <h3>Formas de pagamento</h3>
+              <div className="pagamento">
+                <div className="card-pagamento">
+                  <img src="../assets/images/pix.png" alt="Pix" />
+                </div>
+                <div className="card-pagamento">
+                  <img src="../assets/images/boleto.png" alt="Boleto" />
+                </div>
+                <div className="card-pagamento">
+                  <img src="../assets/images/visa.png" alt="Visa" />
+                </div>
+                <div className="card-pagamento">
+                  <img src="../assets/images/pix.png" alt="Pix" />
+                </div>
+                <div className="card-pagamento">
+                  <img src="../assets/images/boleto.png" alt="Boleto" />
+                </div>
+                <div className="card-pagamento">
+                  <img src="../assets/images/visa.png" alt="Visa" />
+                </div>
+                <div className="card-pagamento">
+                  <img src="../assets/images/pix.png" alt="Pix" />
+                </div>
+                <div className="card-pagamento">
+                  <img src="../assets/images/boleto.png" alt="Boleto" />
+                </div>
+                <div className="card-pagamento">
+                  <img src="../assets/images/visa.png" alt="Visa" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="beneficios-footer">
+            <div className="beneficios-footer-content">
+              <p className="beneficios-destaque">Loja confiável</p>
+              <p>Compra 100% segura</p>
+            </div>
+            <div className="beneficios-footer-content">
+              <p className="beneficios-destaque">Envio rápido</p>
+              <p>Para todo o Brasil</p>
+            </div>
+            <div className="beneficios-footer-content">
+              <p className="beneficios-destaque">Produtos originais</p>
+              <p>Garantia de fábrica</p>
+            </div>
+            <div className="beneficios-footer-content">
+              <p className="beneficios-destaque">Parcele em até 12x</p>
+              <p>No cartão de crédito</p>
+            </div>
+          </div>
+          <div className="direitos-reservados">
+            <p>@ 2026 Fastbuy. Todos os direitos reservados</p>
+            <a href="#">Política de privacidade</a>
+            <a href="#">Termos de uso</a>
+            <a href="#">Trocas e devoluções</a>
+          </div>
+        </footer>
+      );
+    }
+
+    function App() {
+      return (
+        <div>
+          <Header />
+          <Main />
+          <Footer />
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</html>
