@@ -1,24 +1,17 @@
 import React from 'react';
-import maquinaDeLavar from "../assets/images/maquina-de-lavar.png"
-import monitor from "../assets/images/monitor27-aoc.png"
-import iphone from "../assets/images/iphone17.png"
-import tv from "../assets/images/philips.png"
-import smartwatch from "../assets/images/smartwatch.png"
-
+import maquinaDeLavar from '../assets/images/maquina-de-lavar.png';
+import monitor from '../assets/images/monitor27-aoc.png';
+import iphone from '../assets/images/iphone17.png';
+import tv from '../assets/images/philips.png';
+import smartwatch from '../assets/images/smartwatch.png';
 
 function CardProducts() {
   return (
     <section className="products-alta">
       <div className="card-alta">
         <h1>Mais vendidos</h1>
-        <img
-          src={maquinaDeLavar}
-          alt="Máquina de lavar"
-        />
-        <p>
-          Máquina de Lavar Brastemp 14kg com alta capacidade, painel moderno
-          e...
-        </p>
+        <img src={maquinaDeLavar} alt="Máquina de lavar" />
+        <p>Máquina de Lavar Brastemp 14kg com alta capacidade...</p>
         <p className="card-price">R$ 2.399,90</p>
       </div>
       <div className="card-alta">
