@@ -1,4 +1,7 @@
 import React from 'react';
+import geladeira from '../assets/images/geladeira.png';
+import fogao from '../assets/images/fogão.png';
+import panela from '../assets/images/panela.png';
 
 function Cozinha() {
   return (
@@ -6,17 +9,16 @@ function Cozinha() {
       <h2>Para sua cozinha</h2>
       <div className="explore">
         <div className="explore-card">
-          <img src="../assets/images/geladeira.png" alt="Iphone 17 Pro max" />
+          <img src={geladeira} alt="Geladeira" />
           <div>
             <p>
-              iPhone 17 Pro Max com desempenho avançado, câmera <br></br> de
-              alta qualidade, tela ampla e...
+              Geladeira Frost Free com design moderno e ótimo espaço interno...
             </p>
             <p className="card-price">R$ 10.499,90</p>
           </div>
         </div>
         <div className="explore-card">
-          <img src="../assets/images/fogão.png" alt="Monitor 27p AOC" />
+          <img src={fogao} alt="Fogão" />
           <div>
             <p>
               Máquina de Lavar Brastemp 14kg com alta capacidade, painel moderno
@@ -26,21 +28,20 @@ function Cozinha() {
           </div>
         </div>
         <div className="explore-card">
-          <img src="../assets/images/panela.png" alt="Tv Smart Philips" />
+          <img src={panela} alt="Tv Smart Philips" />
           <div>
             <p>
-              Smart TV com tela de alta definição, imagem nítida e <br></br>{' '}
-              acesso aos principais...
+              Fogão 5 bocas com design moderno, forno amplo e ótimo
+              desempenho...
             </p>
             <p className="card-price">R$ 2.299,90</p>
           </div>
         </div>
         <div className="explore-card">
-          <img src="../assets/images/geladeira.png" alt="Tv Smart Philips" />
+          <img src={geladeira} alt="Tv Smart Philips" />
           <div>
             <p>
-              Smartwatch com design moderno, monitoramento de <br></br> saúde,
-              notificações...
+              Geladeira Frost Free com design moderno e ótimo espaço interno...
             </p>
             <p className="card-price">R$ 559,90</p>
           </div>
