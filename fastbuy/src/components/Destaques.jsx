@@ -1,4 +1,7 @@
 import React from 'react';
+import notebook from '../assets/images/notebook.png';
+import fone from '../assets/images/fone.png';
+import travesseiro from '../assets/images/travesseiro.png';
 
 function Destaques() {
   return (
@@ -6,7 +9,7 @@ function Destaques() {
       <h2>Destaques da semana</h2>
       <div className="explore">
         <div className="explore-card">
-          <img src="../assets/images/notebook.png" alt="Iphone 17 Pro max" />
+          <img src={notebook} alt="Iphone 17 Pro max" />
           <div>
             <p>
               iPhone 17 Pro Max com desempenho avançado, câmera <br></br> de
@@ -16,7 +19,7 @@ function Destaques() {
           </div>
         </div>
         <div className="explore-card">
-          <img src="../assets/images/fone.png" alt="Monitor 27p AOC" />
+          <img src={fone} alt="Monitor 27p AOC" />
           <div>
             <p>
               Máquina de Lavar Brastemp 14kg com alta capacidade, painel moderno
@@ -26,7 +29,7 @@ function Destaques() {
           </div>
         </div>
         <div className="explore-card">
-          <img src="../assets/images/travesseiro.png" alt="Tv Smart Philips" />
+          <img src={travesseiro} alt="Tv Smart Philips" />
           <div>
             <p>
               Smart TV com tela de alta definição, imagem nítida e <br></br>{' '}
@@ -36,7 +39,7 @@ function Destaques() {
           </div>
         </div>
         <div className="explore-card">
-          <img src="../assets/images/notebook.png" alt="Tv Smart Philips" />
+          <img src={notebook} alt="Tv Smart Philips" />
           <div>
             <p>
               Smartwatch com design moderno, monitoramento de <br></br> saúde,
