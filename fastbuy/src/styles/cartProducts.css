@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #020817;
+}
+
+.container-produto {
+  display: flex;
+  justify-content: center;
+  height: 65vh;
+  margin-top: 25px;
+  margin-left: 70px;
+}
+
+.content-produto p {
+  display: flex;
+  flex-direction: column;
+  color: gray;
+  margin: 30px 0 30px 50px;
+}
+
+.info-product {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 25px 50px;
+}
+
+.detalhes-product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.card-product {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  width: 65px;
+  height: 65px;
+  margin-right: 20px;
+  border-radius: 10px;
+  background: rgba(14, 19, 29, 0.75);
+}
+
+.image-product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  background: rgba(14, 19, 29, 0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+}
+
+.contentDescricao-product {
+  width: 40%;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.desconto-product {
+  display: flex;
+  gap: 10px;
+}
+
+.novoProduto {
+  font-weight: bolder;
+  padding: 5px 10px;
+  background: linear-gradient(#0059ff21, #001d5263);
+  color: rgb(0, 102, 255);
+  border-radius: 5px;
+}
+
+p.descontoAplicado {
+  background: linear-gradient(rgba(0, 255, 0, 0.164), #004d0069);
+  color: green;
+}
+
+.descricaoProduct h1 {
+  color: white;
+  font-size: 1.7rem;
+  margin-top: 25px;
+}
+
+#avaliacoes {
+  margin-top: 15px;
+}
+
+#avaliacoesProduct {
+  color: gray;
+}
+
+#descrevendoProduct {
+  width: 100%;
+  margin-top: 25px;
+  color: gray;
+}
+
+.color-product {
+  display: flex;
+  gap: 5px;
+  margin: 50px 0 15px 0;
+  color: white;
+}
+
+.color-product > p {
+  font-weight: bolder;
+}
+
+.color-product > span {
+  color: rgb(194, 194, 194);
+}
+
+.color-options {
+  display: flex;
+  gap: 15px;
+}
+
+.color {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgb(63, 63, 63);
+}
+
+.black {
+  background-color: black;
+}
+
+.white {
+  background-color: rgb(255, 255, 255);
+}
+
+.blue {
+  background-color: rgb(0, 174, 255);
+}
+
+.pink {
+  background-color: pink;
+}
+
+.green {
+  background-color: rgb(176, 255, 87);
+}
+
+.features {
+  margin: 50px 0 0 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.features p {
+  color: gray;
+}
+
+.content-pagamento {
+  border-radius: 15px;
+  width: 550px;
+  margin: 80px 180px 0 50px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(14, 19, 29, 0.75);
+}
+
+.estoqueImediato {
+  font-weight: 500;
+  color: rgb(65, 161, 65);
+}
+
+.content-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+#price {
+  font-weight: bolder;
+  font-size: 2rem;
+  color: #0073ff;
+}
+
+#jurosParcelados {
+  font-weight: bold;
+  color: white;
+}
+
+#parcelas {
+  font-size: 15px;
+  margin-top: 5px;
+  background: none;
+  color: #0073ff;
+  border: none;
+}
+
+.content-cart {
+  margin-top: 17px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.parcelas-product {
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.178);
+  border-radius: 10px;
+}
+
+.parcelas-product p {
+  margin: 5px 0 5px 0;
+  width: 80%;
+  margin-left: 20px;
+  color: rgb(126, 126, 126);
+}
+
+p#dozeVezes-juros {
+  text-transform: uppercase;
+  color: rgb(201, 201, 201);
+}
+
+.button-cart {
+  width: 100%;
+  margin-top: 3px;
+}
+
+.add-cart {
+  font-weight: 400;
+  font-size: 16px;
+  color: white;
+  background: #2563eb;
+  border: none;
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+}
+
+.buy-product {
+  background-color: transparent;
+  border: 1px solid #2563eb;
+}
+
+.content-frete {
+  margin-top: 5px;
+  border-top: 1px solid #003270;
+  width: 100%;
+}
+
+.content-frete p {
+  font-size: 13.5px;
+  margin: 8px 0 8px 0;
+  color: gray;
+}
+
+.calcularFrete {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+}
+
+#frete {
+  outline: none;
+  width: 70%;
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+}
+
+#calcular {
+  border-radius: 10px;
+  color: white;
+  background-color: transparent;
+  border: 1px solid gray;
+  width: 30%;
+  padding: 10px;
+}
