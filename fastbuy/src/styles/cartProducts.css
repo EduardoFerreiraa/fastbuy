@@ -61,6 +61,22 @@ body {
   border-radius: 20px;
 }
 
+.image-product,
+.image-product img,
+.card-product {
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.image-product:hover,
+.card-product:hover {
+  background: rgba(20, 25, 34, 0.884);
+}
+
+.image-product:hover img {
+  transform: scale(1.015);
+}
+
 .contentDescricao-product {
   width: 40%;
   margin-top: 80px;
@@ -131,7 +147,14 @@ p.descontoAplicado {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid rgb(63, 63, 63);
+  border: 1.5px solid rgb(63, 63, 63);
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.color:hover {
+  transform: scale(1.1);
+  border: 1.5px solid rgb(255, 255, 255);
 }
 
 .black {
@@ -139,7 +162,7 @@ p.descontoAplicado {
 }
 
 .white {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(224, 224, 224);
 }
 
 .blue {
@@ -172,6 +195,11 @@ p.descontoAplicado {
   padding: 20px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(14, 19, 29, 0.75);
+  transition: 0.5s;
+}
+
+.content-pagamento:hover {
+  background: rgba(20, 25, 34, 0.884);
 }
 
 .estoqueImediato {
@@ -204,6 +232,7 @@ p.descontoAplicado {
   background: none;
   color: #0073ff;
   border: none;
+  cursor: pointer;
 }
 
 .content-cart {
@@ -218,6 +247,19 @@ p.descontoAplicado {
   padding: 10px;
   border: 1px solid rgba(255, 255, 255, 0.178);
   border-radius: 10px;
+  transition: 0.4s ease;
+}
+
+.parcelas-product:hover {
+  background-color: white;
+}
+
+.parcelas-product:hover p {
+  color: rgb(41, 41, 41);
+}
+
+.parcelas-product:hover #dozeVezes-juros {
+  color: black;
 }
 
 .parcelas-product p {
@@ -246,11 +288,17 @@ p#dozeVezes-juros {
   border-radius: 12px;
   padding: 20px;
   width: 100%;
+  cursor: pointer;
 }
 
 .buy-product {
   background-color: transparent;
   border: 1px solid #2563eb;
+  transition: 0.35s ease;
+}
+
+.buy-product:hover {
+  background: #2563eb;
 }
 
 .content-frete {
@@ -286,4 +334,11 @@ p#dozeVezes-juros {
   border: 1px solid gray;
   width: 30%;
   padding: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#calcular:hover {
+  color: black;
+  background-color: white;
 }
