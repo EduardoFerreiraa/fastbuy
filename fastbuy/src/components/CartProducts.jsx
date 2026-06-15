@@ -1,4 +1,5 @@
 import { useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import React from 'react';
 import '../styles/cartProducts.css';
 import Header from './Header';
@@ -8,7 +9,12 @@ function CartProducts() {
   const { state } = useLocation();
 
   return (
-    <section className="container-produto">
+    <motion.section
+      className="container-produto"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+    >
       <div className="content-produto">
         <p>
           Home {'>'} Smartphones {'>'} Iphone {'>'} Iphone 16 PRO MAX 128GB
@@ -90,7 +96,7 @@ function CartProducts() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
