@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import iphone from '../assets/images/iphone17.png';
 import monitor from '../assets/images/monitor27-aoc.png';
 import tv from '../assets/images/philips.png';
@@ -6,6 +7,8 @@ import smartwatch from '../assets/images/smartwatch.png';
 import marquinaDeLavar from '../assets/images/maquina-de-lavar.png';
 
 function Explore() {
+  const navigate = useNavigate();
+
   return (
     <section className="explore-content">
       <h2>Conheça mais</h2>

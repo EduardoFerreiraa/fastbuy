@@ -33,7 +33,7 @@ function Header() {
       key={location.pathname}
       id="header"
       initial={{
-        opacity: 0,
+        opacity: 1,
         y: -12,
       }}
       animate={{

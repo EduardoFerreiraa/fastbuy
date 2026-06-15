@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 import SkeletonProduct from './SkeletonProduct';
 import '../styles/cartProducts.css';
 import Header from './Header';
-import iphone from '../assets/images/iphone17.png';
 
 function CartProducts() {
   const { state } = useLocation();
