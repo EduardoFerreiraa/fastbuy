@@ -41,7 +41,7 @@ function Header() {
         y: 0,
       }}
       transition={{
-        duration: 0.35,
+        duration: 0.54,
         ease: 'easeOut',
       }}
     >

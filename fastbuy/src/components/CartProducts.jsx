@@ -1,13 +1,23 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import SkeletonProduct from './SkeletonProduct';
 import '../styles/cartProducts.css';
 import Header from './Header';
 import iphone from '../assets/images/iphone17.png';
 
 function CartProducts() {
   const { state } = useLocation();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 600);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     document.body.classList.add('cart-body');
@@ -16,6 +26,10 @@ function CartProducts() {
       document.body.classList.remove('cart-body');
     };
   }, []);
+
+  if (loading) {
+    return <SkeletonProduct />;
+  }
 
   return (
     <motion.section
@@ -61,7 +75,7 @@ function CartProducts() {
           <h1>{state.titulo}</h1>
           <p id="avaliacoes">
             ⭐ ⭐ ⭐ ⭐ ⭐{' '}
-            <span id="avaliacoesProduct">(1.254 avaliações)</span>
+            <span id="avaliacoesProduct">({state.avaliacoes})</span>
           </p>
           <p id="descrevendoProduct">{state.descricao}</p>
           <div className="color-product">
@@ -76,10 +90,9 @@ function CartProducts() {
             <button className="color green"></button>
           </div>
           <div className="features">
-            <p>Tela Super Retina XDR</p>
-            <p>Câmera Pro de 48MP</p>
-            <p>Resistência à água e poeira (IP68)</p>
-            <p>Bateria de longa duração</p>
+            {state.features.map((feature, index) => (
+              <p key={index}>{feature}</p>
+            ))}
           </div>
         </div>
       </div>
@@ -88,7 +101,7 @@ function CartProducts() {
         <p className="estoqueImediato">Em estoque - Envio imediato</p>
         <div className="content-price">
           <p id="price">{state.preco}</p>
-          <p id="jurosParcelados">ou 12x de R$ 399,91 sem juros</p>
+          <p id="jurosParcelados">{state.juros}</p>
           <button id="parcelas">Ver parcelas</button>
         </div>
         <div className="content-cart">
