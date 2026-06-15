@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import maquinaDeLavar from '../assets/images/maquina-de-lavar.png';
 import monitor from '../assets/images/monitor27-aoc.png';
 import iphone from '../assets/images/iphone17.png';
@@ -6,15 +7,29 @@ import tv from '../assets/images/philips.png';
 import smartwatch from '../assets/images/smartwatch.png';
 
 function CardProducts() {
+  const navigate = useNavigate();
+
   return (
     <section className="products-alta">
-      <div className="card-alta">
+      <div
+        className="card-alta"
+        onClick={() => {
+          navigate('/produto');
+          window.scrollTo(0, 0);
+        }}
+      >
         <h1>Mais vendidos</h1>
         <img src={maquinaDeLavar} alt="Máquina de lavar" />
         <p>Máquina de Lavar Brastemp 14kg com alta capacidade...</p>
         <p className="card-price">R$ 2.399,90</p>
       </div>
-      <div className="card-alta">
+      <div
+        className="card-alta"
+        onClick={() => {
+          navigate('/produto');
+          window.scrollTo(0, 0);
+        }}
+      >
         <h1>Top da categoria</h1>
         <img src={monitor} alt="Monitor 27p AOC" />
         <p>
@@ -23,7 +38,22 @@ function CardProducts() {
         </p>
         <p className="card-price">R$ 899,90</p>
       </div>
-      <div className="card-alta">
+      <div
+        className="card-alta"
+        onClick={() => {
+          navigate('/produto', {
+            state: {
+              titulo: 'iPhone 16 Pro Max',
+              preco: 'R$ 10.499,90',
+              descricao:
+                'iPhone 16 Pro Max com desempenho avançado, câmera de alta qualidade, tela ampla e experiência premium.',
+              imagem: iphone,
+            },
+          });
+
+          window.scrollTo(0, 0);
+        }}
+      >
         <h1>Destaques</h1>
         <img src={iphone} alt="Iphone 17 Pro max" />
         <p>
@@ -32,7 +62,21 @@ function CardProducts() {
         </p>
         <p className="card-price">R$ 10.499,90</p>
       </div>
-      <div className="card-alta">
+      <div
+        className="card-alta"
+        onClick={() => {
+          navigate('/produto', {
+            state: {
+              titulo: 'Smart TV Philips 55" 4K',
+              preco: 'R$ 2.299,90',
+              descricao:
+                'Smart TV Philips com tela de alta definição, imagem nítida, sistema inteligente e acesso aos principais aplicativos de streaming como Netflix, YouTube e Prime Video.',
+              imagem: tv,
+            },
+          });
+          window.scrollTo(0, 0);
+        }}
+      >
         <h1>Melhores ofertas</h1>
         <img src={tv} alt="Tv Smart Philips" />
         <p>
@@ -41,7 +85,13 @@ function CardProducts() {
         </p>
         <p className="card-price">R$ 2.299,90</p>
       </div>
-      <div className="card-alta">
+      <div
+        className="card-alta"
+        onClick={() => {
+          navigate('/produto');
+          window.scrollTo(0, 0);
+        }}
+      >
         <h1>Promoções</h1>
         <img src={smartwatch} alt="Smartwatch" />
         <p>

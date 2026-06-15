@@ -1,8 +1,12 @@
+import { useLocation } from 'react-router-dom';
 import React from 'react';
+import '../styles/cartProducts.css';
 import Header from './Header';
 import iphone from '../assets/images/iphone17.png';
 
 function CartProducts() {
+  const { state } = useLocation();
+
   return (
     <section className="container-produto">
       <div className="content-produto">
@@ -19,7 +23,7 @@ function CartProducts() {
             <div className="card-product">5</div>
           </div>
           <div className="image-product">
-            <img src={iphone} alt="Iphone" />
+            <img src={state.imagem} alt={state.titulo} />
           </div>
         </div>
       </div>
@@ -30,16 +34,12 @@ function CartProducts() {
           <p className="novoProduto descontoAplicado">12% OFF</p>
         </div>
         <div className="descricaoProduct">
-          <h1>Iphone 16 Pro Max 128GB Branco</h1>
+          <h1>{state.titulo}</h1>
           <p id="avaliacoes">
             ⭐ ⭐ ⭐ ⭐ ⭐{' '}
             <span id="avaliacoesProduct">(1.254 avaliações)</span>
           </p>
-          <p id="descrevendoProduct">
-            iPhone 16 Pro Max com desempenho avançado, câmera de alta qualidade,
-            tela ampla e design premium, oferecendo velocidade, potência e uma
-            experiência incrível no dia a dia...
-          </p>
+          <p id="descrevendoProduct">{state.descricao}</p>
           <div className="color-product">
             <p>Cor:</p> <span>Branca</span>
           </div>
@@ -63,7 +63,7 @@ function CartProducts() {
       <div className="content-pagamento">
         <p className="estoqueImediato">Em estoque - Envio imediato</p>
         <div className="content-price">
-          <p id="price">R$ 4.799,00</p>
+          <p id="price">{state.preco}</p>
           <p id="jurosParcelados">ou 12x de R$ 399,91 sem juros</p>
           <button id="parcelas">Ver parcelas</button>
         </div>

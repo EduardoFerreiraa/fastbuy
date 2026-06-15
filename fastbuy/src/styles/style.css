@@ -29,10 +29,11 @@ body {
 }
 
 #buscar-cep {
+  width: 100%;
   color: gray;
   border: none;
-  padding: 15px 40px;
-  text-align: center;
+  padding: 15px 30px;
+  text-align: left;
   background-color: white;
   border-radius: 10px;
   border: 1px solid transparent;
@@ -556,7 +557,7 @@ p.card-price {
 
 .footer {
   width: 100%;
-  margin-top: 100px;
+  padding-top: 100px;
   background-color: #090e1a;
   display: flex;
   justify-content: center;
@@ -571,7 +572,6 @@ p.card-price {
   justify-content: center;
   align-items: center;
   gap: 100px;
-  margin: 35px;
 }
 
 .footer-logo {
