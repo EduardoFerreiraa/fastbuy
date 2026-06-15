@@ -1,6 +1,7 @@
+import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import React from 'react';
+import { useEffect } from 'react';
 import '../styles/cartProducts.css';
 import Header from './Header';
 import iphone from '../assets/images/iphone17.png';
@@ -8,12 +9,29 @@ import iphone from '../assets/images/iphone17.png';
 function CartProducts() {
   const { state } = useLocation();
 
+  useEffect(() => {
+    document.body.classList.add('cart-body');
+
+    return () => {
+      document.body.classList.remove('cart-body');
+    };
+  }, []);
+
   return (
     <motion.section
       className="container-produto"
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
+      initial={{
+        opacity: 0,
+        y: 12,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{
+        duration: 0.35,
+        ease: 'easeOut',
+      }}
     >
       <div className="content-produto">
         <p>

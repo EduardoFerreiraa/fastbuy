@@ -1,4 +1,6 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import logoFast from '../assets/logo/logo-fast.png';
 import heartIcon from '../assets/icons/heart.png';
 import shoppingBagIcon from '../assets/icons/shopping-bag.png';
@@ -24,8 +26,25 @@ function Header() {
     };
   }, []);
 
+  const location = useLocation();
+
   return (
-    <header id="header">
+    <motion.header
+      key={location.pathname}
+      id="header"
+      initial={{
+        opacity: 0,
+        y: -12,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{
+        duration: 0.35,
+        ease: 'easeOut',
+      }}
+    >
       <div id="header-content">
         <div id="logo-content">
           <a href="index.html">
@@ -213,7 +232,7 @@ function Header() {
           </li>
         </ul>
       </nav>
-    </header>
+    </motion.header>
   );
 }
 
