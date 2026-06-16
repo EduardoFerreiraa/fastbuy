@@ -5,28 +5,32 @@ import { products } from '../data/productsData';
 function CardProducts() {
   const navigate = useNavigate();
 
+  const cardProducts = products.filter((produto) =>
+    produto.secoes.includes('card-products'),
+  );
+
   return (
     <section className="products-alta">
-      {products.map((product) => (
+      {cardProducts.map((produto) => (
         <div
-          key={product.id}
+          key={produto.id}
           className="card-alta"
           onClick={() => {
             navigate('/produto', {
-              state: product,
+              state: produto,
             });
 
             window.scrollTo(0, 0);
           }}
         >
-          <h1>{product.categoria}</h1>
+          <h1>{produto.categoria}</h1>
 
-          <img src={product.imagem} alt={product.titulo} />
+          <img src={produto.imagem} alt={produto.titulo} />
 
           <p className="product-description">
-            {product.descricao.slice(0, 80)}
+            {produto.descricao.slice(0, 80)}
           </p>
-          <p className="card-price">{product.preco}</p>
+          <p className="card-price">{produto.preco}</p>
         </div>
       ))}
     </section>

@@ -3,12 +3,15 @@ import monitor from '../assets/images/monitor27-aoc.png';
 import iphone from '../assets/images/iphone17.png';
 import tv from '../assets/images/philips.png';
 import smartwatch from '../assets/images/smartwatch.png';
+import painelTv from '../assets/images/painel.png';
+import poltronas from '../assets/images/poltronas.png';
+import tablet from '../assets/images/tablet.png';
 
 export const products = [
   {
     id: 1,
     categoria: 'Mais vendidos',
-    secoes: ['explore'],
+    secoes: ['card-products', 'explore'],
     titulo: 'Máquina de Lavar Brastemp 14kg',
     avaliacoes: '2.117',
     preco: 'R$ 2.399,90',
@@ -27,7 +30,7 @@ export const products = [
   {
     id: 2,
     categoria: 'Top da categoria',
-    secoes: ['explore'],
+    secoes: ['card-products', 'explore'],
     titulo: 'Monitor AOC 27" Full HD',
     avaliacoes: '3.572',
     preco: 'R$ 899,90',
@@ -46,7 +49,7 @@ export const products = [
   {
     id: 3,
     categoria: 'smartphones',
-    secoes: ['explore', 'mais-vendidos'],
+    secoes: ['card-products', 'explore'],
     titulo: 'iPhone 16 Pro Max',
     avaliacoes: '5.286',
     preco: 'R$ 10.499,90',
@@ -65,7 +68,7 @@ export const products = [
   {
     id: 4,
     categoria: 'Melhores ofertas',
-    secoes: ['explore'],
+    secoes: ['card-products', 'explore'],
     titulo: 'Smart TV Philips 55" 4K',
     avaliacoes: '1.783',
     preco: 'R$ 2.299,90',
@@ -84,7 +87,7 @@ export const products = [
   {
     id: 5,
     categoria: 'Promoções',
-    secoes: ['explore'],
+    secoes: ['card-products', 'explore'],
     titulo: 'Smartwatch Ultra Fit Pro',
     avaliacoes: '947',
     preco: 'R$ 559,90',
@@ -102,6 +105,58 @@ export const products = [
 
   {
     id: 6,
-    
-  }
+    categoria: 'Tablets',
+    secoes: ['explore', 'tecnologia'],
+    titulo: 'Tablet Samsung Galaxy Tab S10 Lite 128GB',
+    avaliacoes: '2.843',
+    preco: 'R$ 2.199,90',
+    juros: 'ou 12x de R$ 183,32 sem juros',
+    descricao:
+      'Tablet Samsung Galaxy Tab S10 Lite com tela ampla de 10.9”, desempenho rápido, caneta inclusa e capa protetora para produtividade, estudos e entretenimento.',
+    imagem: tablet,
+    features: [
+      'Tela de 10.9" Full HD',
+      '6GB RAM + 128GB',
+      'Caneta S Pen inclusa',
+      'Processador Exynos 1380',
+    ],
+  },
+
+  {
+    id: 7,
+    categoria: 'Sala de estar',
+    secoes: ['explore', 'moveis'],
+    titulo: 'Painel para TV até 55" Caemmun Black 19 SE',
+    avaliacoes: '1.284',
+    preco: 'R$ 489,90',
+    juros: 'ou 12x de R$ 40,82 sem juros',
+    descricao:
+      'Painel moderno para TV de até 55 polegadas com design elegante, acabamento sofisticado e nichos para decoração e eletrônicos.',
+    imagem: painelTv,
+    features: [
+      'Compatível com TV até 55"',
+      'Design moderno e elegante',
+      'Espaço para eletrônicos',
+      'Acabamento resistente',
+    ],
+  },
+
+  {
+    id: 8,
+    categoria: 'Decoração',
+    secoes: ['explore', 'casa'],
+    titulo: 'Kit 2 Poltronas Decorativas Alice Suede',
+    avaliacoes: '3.192',
+    preco: 'R$ 799,90',
+    juros: 'ou 12x de R$ 66,65 sem juros',
+    descricao:
+      'Kit com 2 poltronas decorativas confortáveis em tecido suede, ideais para sala, recepção, consultório, salão de beleza e escritório.',
+    imagem: poltronas,
+    features: [
+      'Tecido suede macio',
+      'Design elegante e confortável',
+      'Ideal para sala e escritório',
+      'Estrutura resistente',
+    ],
+  },
 ];
