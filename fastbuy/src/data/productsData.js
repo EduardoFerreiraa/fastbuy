@@ -8,6 +8,7 @@ export const products = [
   {
     id: 1,
     categoria: 'Mais vendidos',
+    secoes: ['explore'],
     titulo: 'Máquina de Lavar Brastemp 14kg',
     avaliacoes: '2.117',
     preco: 'R$ 2.399,90',
@@ -26,6 +27,7 @@ export const products = [
   {
     id: 2,
     categoria: 'Top da categoria',
+    secoes: ['explore'],
     titulo: 'Monitor AOC 27" Full HD',
     avaliacoes: '3.572',
     preco: 'R$ 899,90',
@@ -43,7 +45,8 @@ export const products = [
 
   {
     id: 3,
-    categoria: 'Destaques',
+    categoria: 'smartphones',
+    secoes: ['explore', 'mais-vendidos'],
     titulo: 'iPhone 16 Pro Max',
     avaliacoes: '5.286',
     preco: 'R$ 10.499,90',
@@ -62,6 +65,7 @@ export const products = [
   {
     id: 4,
     categoria: 'Melhores ofertas',
+    secoes: ['explore'],
     titulo: 'Smart TV Philips 55" 4K',
     avaliacoes: '1.783',
     preco: 'R$ 2.299,90',
@@ -80,6 +84,7 @@ export const products = [
   {
     id: 5,
     categoria: 'Promoções',
+    secoes: ['explore'],
     titulo: 'Smartwatch Ultra Fit Pro',
     avaliacoes: '947',
     preco: 'R$ 559,90',
@@ -94,4 +99,9 @@ export const products = [
       'Bateria duradoura',
     ],
   },
+
+  {
+    id: 6,
+    
+  }
 ];
