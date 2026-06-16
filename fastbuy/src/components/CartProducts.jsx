@@ -6,7 +6,7 @@ import SkeletonProduct from './SkeletonProduct';
 import '../styles/cartProducts.css';
 import Header from './Header';
 
-function CartProducts() {
+function CartProducts({ setCartCount }) {
   const { state } = useLocation();
   const [loading, setLoading] = useState(true);
 
@@ -110,7 +110,14 @@ function CartProducts() {
           </div>
 
           <div className="button-cart">
-            <button className="add-cart">Adicionar no carrinho</button>
+            <button
+              className="add-cart"
+              onClick={() => {
+                setCartCount((prev) => prev + 1);
+              }}
+            >
+              Adicionar no carrinho
+            </button>
           </div>
 
           <div className="button-cart">

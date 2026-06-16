@@ -5,7 +5,7 @@ import logoFast from '../assets/logo/logo-fast.png';
 import heartIcon from '../assets/icons/heart.png';
 import shoppingBagIcon from '../assets/icons/shopping-bag.png';
 
-function Header() {
+function Header({ cartCount }) {
   const [openMenu, setOpenMenu] = React.useState(null);
   const menuRef = React.useRef(null);
 
@@ -62,7 +62,7 @@ function Header() {
             <img src={shoppingBagIcon} alt="Carrinho" />
 
             <div className="addCarrinho">
-              <p>0</p>
+              <p>{cartCount}</p>
             </div>
           </a>
         </div>
