@@ -57,8 +57,13 @@ function Header() {
           <a className="header-actions-item" href="#">
             <img src={heartIcon} alt="Favoritos" />
           </a>
-          <a className="header-actions-item" href="#">
+
+          <a className="header-actions-item cart-item" href="#">
             <img src={shoppingBagIcon} alt="Carrinho" />
+
+            <div className="addCarrinho">
+              <p>0</p>
+            </div>
           </a>
         </div>
       </div>
