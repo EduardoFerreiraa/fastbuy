@@ -1,14 +1,19 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import SkeletonProduct from './SkeletonProduct';
 import '../styles/cartProducts.css';
 import Header from './Header';
+import { products } from '../data/productsData';
 
 function CartProducts({ setCartCount }) {
   const { state } = useLocation();
   const [loading, setLoading] = useState(true);
+  const { id } = useParams();
+
+  const produto = products.find((produto) => produto.id === Number(id));
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -60,7 +65,7 @@ function CartProducts({ setCartCount }) {
             <div className="card-product">5</div>
           </div>
           <div className="image-product">
-            <img src={state.imagem} alt={state.titulo} />
+            <img src={produto.imagem} alt={produto.titulo} />
           </div>
         </div>
       </div>
@@ -71,12 +76,12 @@ function CartProducts({ setCartCount }) {
           <p className="novoProduto descontoAplicado">12% OFF</p>
         </div>
         <div className="descricaoProduct">
-          <h1>{state.titulo}</h1>
+          <h1>{produto.titulo}</h1>
           <p id="avaliacoes">
             ⭐ ⭐ ⭐ ⭐ ⭐{' '}
-            <span id="avaliacoesProduct">({state.avaliacoes})</span>
+            <span id="avaliacoesProduct">({produto.avaliacoes})</span>
           </p>
-          <p id="descrevendoProduct">{state.descricao}</p>
+          <p id="descrevendoProduct">{produto.descricao}</p>
           <div className="color-product">
             <p>Cor:</p> <span>Branca</span>
           </div>
@@ -89,7 +94,7 @@ function CartProducts({ setCartCount }) {
             <button className="color green"></button>
           </div>
           <div className="features">
-            {state.features.map((feature, index) => (
+            {produto.features.map((feature, index) => (
               <p key={index}>{feature}</p>
             ))}
           </div>
@@ -99,8 +104,8 @@ function CartProducts({ setCartCount }) {
       <div className="content-pagamento">
         <p className="estoqueImediato">Em estoque - Envio imediato</p>
         <div className="content-price">
-          <p id="price">{state.preco}</p>
-          <p id="jurosParcelados">{state.juros}</p>
+          <p id="price">{produto.preco}</p>
+          <p id="jurosParcelados">{produto.juros}</p>
           <button id="parcelas">Ver parcelas</button>
         </div>
         <div className="content-cart">

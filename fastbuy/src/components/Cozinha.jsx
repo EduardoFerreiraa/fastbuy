@@ -18,7 +18,7 @@ function Cozinha() {
             key={produto.id}
             className="explore-card"
             onClick={() => {
-              navigate('/produto', {
+              navigate(`/produto/${produto.id}`, {
                 state: produto,
               });
 

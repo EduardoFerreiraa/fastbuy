@@ -1,13 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import logoFast from '../assets/logo/logo-fast.png';
 import heartIcon from '../assets/icons/heart.png';
 import shoppingBagIcon from '../assets/icons/shopping-bag.png';
+import { products } from '../data/productsData';
 
 function Header({ cartCount }) {
   const [openMenu, setOpenMenu] = React.useState(null);
   const menuRef = React.useRef(null);
+  const [search, setSearch] = useState('');
+  const navigate = useNavigate();
+
+  function removeAccents(text) {
+    return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+
+  const filteredProducts = search
+    ? products.filter((produto) =>
+        removeAccents(produto.titulo.toLowerCase()).includes(
+          removeAccents(search.toLowerCase()),
+        ),
+      )
+    : [];
 
   function toggleOpenMenu(menu) {
     setOpenMenu((prevMenu) => (prevMenu === menu ? null : menu));
@@ -47,12 +63,35 @@ function Header({ cartCount }) {
     >
       <div id="header-content">
         <div id="logo-content">
-          <a href="index.html">
+          <a href="http://localhost:5173/">
             <img id="header-logo" src={logoFast} alt="Logo" />
           </a>
           <button id="buscar-cep">Digite o seu CEP</button>
         </div>
-        <input type="text" id="busca" placeholder="Busque na Fastbuy" />
+        <input
+          type="text"
+          id="busca"
+          placeholder="Pesquisar na Fastbuy..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        {search && (
+          <div className="search-results">
+            {filteredProducts.map((produto) => (
+              <div
+                key={produto.id}
+                className="search-item"
+                onClick={() => {
+                  navigate(`/produto/${produto.id}`, {
+                    state: produto,
+                  });
+                }}
+              >
+                {produto.titulo}
+              </div>
+            ))}
+          </div>
+        )}
         <div className="header-actions">
           <a className="header-actions-item" href="#">
             <img src={heartIcon} alt="Favoritos" />

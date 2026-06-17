@@ -27,7 +27,7 @@ function App() {
         <Route path="/" element={<Main />} />
 
         <Route
-          path="/produto"
+          path="/produto/:id"
           element={<CartProducts setCartCount={setCartCount} />}
         />
       </Routes>

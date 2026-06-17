@@ -16,7 +16,7 @@ function CardProducts() {
           key={produto.id}
           className="card-alta"
           onClick={() => {
-            navigate('/produto', {
+            navigate(`/produto/${produto.id}`, {
               state: produto,
             });
 
