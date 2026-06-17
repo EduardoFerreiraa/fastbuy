@@ -453,7 +453,7 @@ p.card-price {
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.24);
   color: black;
   border-radius: 10px;
-  transition: 0.4s;
+  transition: 0.25s;
   cursor: pointer;
 }
 

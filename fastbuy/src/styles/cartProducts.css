@@ -74,7 +74,7 @@
 
 .image-product:hover,
 .card-product:hover {
-  background: rgba(20, 25, 34, 0.884);
+  background: rgba(255, 255, 255, 0.884);
 }
 
 .image-product:hover img {
@@ -293,6 +293,12 @@ p#dozeVezes-juros {
   padding: 20px;
   width: 100%;
   cursor: pointer;
+  transition: 0.35s ease;
+}
+
+.add-cart:hover {
+  color: black;
+  background-color: white;
 }
 
 .buy-product {
@@ -302,6 +308,7 @@ p#dozeVezes-juros {
 }
 
 .buy-product:hover {
+  color: white;
   background: #2563eb;
 }
 
