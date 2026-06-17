@@ -10,6 +10,10 @@ import notebook from '../assets/images/notebook.png';
 import fone from '../assets/images/fone.png';
 import travesseiro from '../assets/images/travesseiro.png';
 import controlePs5 from '../assets/images/controle.png';
+import geladeira from '../assets/images/geladeira.png';
+import fogao from '../assets/images/fogão.png';
+import panela from '../assets/images/panela.png';
+import armario from '../assets/images/armario.png';
 
 export const products = [
   {
@@ -237,6 +241,82 @@ export const products = [
       'Gatilhos adaptáveis',
       'Conexão sem fio Bluetooth',
       'Design ergonômico confortável',
+    ],
+  },
+
+  {
+    id: 13,
+    categoria: 'Eletrodomésticos',
+    secoes: ['cozinha'],
+    titulo: 'Geladeira Consul Frost Free Duplex 377L',
+    avaliacoes: '4.521',
+    preco: 'R$ 3.299,90',
+    juros: 'ou 12x de R$ 274,99 sem juros',
+    descricao:
+      'Geladeira Consul Frost Free Duplex com 377 litros de capacidade, amplo espaço interno, economia de energia e design moderno para sua cozinha.',
+    imagem: geladeira,
+    features: [
+      '377 litros de capacidade',
+      'Tecnologia Frost Free',
+      'Prateleiras ajustáveis',
+      'Baixo consumo de energia',
+    ],
+  },
+
+  {
+    id: 14,
+    categoria: 'Cozinha',
+    secoes: ['cozinha'],
+    titulo: 'Fogão 5 Bocas Inox com Acendimento Automático',
+    avaliacoes: '2.874',
+    preco: 'R$ 1.599,90',
+    juros: 'ou 12x de R$ 133,32 sem juros',
+    descricao:
+      'Fogão 5 bocas com mesa em inox, forno espaçoso, acendimento automático e design moderno para preparar suas receitas com praticidade.',
+    imagem: fogao,
+    features: [
+      '5 bocas de alta eficiência',
+      'Acendimento automático',
+      'Forno amplo e resistente',
+      'Mesa em inox',
+    ],
+  },
+
+  {
+    id: 15,
+    categoria: 'Utilidades',
+    secoes: ['cozinha'],
+    titulo: 'Panela de Pressão Premium 4,5L',
+    avaliacoes: '3.918',
+    preco: 'R$ 189,90',
+    juros: 'ou 12x de R$ 15,82 sem juros',
+    descricao:
+      'Panela de pressão resistente e segura, ideal para preparar refeições com rapidez, praticidade e excelente desempenho no dia a dia.',
+    imagem: panela,
+    features: [
+      'Capacidade de 4,5 litros',
+      'Sistema de segurança reforçado',
+      'Fechamento prático',
+      'Alumínio resistente',
+    ],
+  },
+
+  {
+    id: 16,
+    categoria: 'Cozinha',
+    secoes: ['cozinha', 'moveis'],
+    titulo: 'Armário de Cozinha Compacta Emilly Pop Madesa',
+    avaliacoes: '2.438',
+    preco: 'R$ 699,90',
+    juros: 'ou 12x de R$ 58,32 sem juros',
+    descricao:
+      'Armário de cozinha compacto com design moderno, espaço para utensílios e acabamento Rustic/Preto que combina com diversos ambientes.',
+    imagem: armario,
+    features: [
+      'Design Rustic/Preto',
+      'Compartimentos espaçosos',
+      'Ideal para cozinhas compactas',
+      'Estrutura resistente',
     ],
   },
 ];
